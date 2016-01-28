@@ -1,0 +1,21 @@
+{
+  "name": "EPIC",
+  "homepage": "https://github.com/NUisEPIC/Website",
+  "authors": [
+    "Aaron Leon <aaronleon2018@u.northwestern.edu>"
+  ],
+  "description": "EPIC at Northwestern University",
+  "main": "",
+  "moduleType": [],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "fullpage.js": "~2.7.6"
+  }
+}
