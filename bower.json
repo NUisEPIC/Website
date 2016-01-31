@@ -16,7 +16,6 @@
     "tests"
   ],
   "dependencies": {
-    "fullpage.js": "~2.7.6",
     "Flowtime.js": "flowtime#*"
   }
 }
