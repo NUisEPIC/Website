@@ -1,0 +1,36 @@
+.ft-page, .ft-section {
+  margin: auto auto;
+  height: 100vh;
+  width: 100vw;
+  background-position: center !important;
+  background-repeat: no-repeat !important;
+  background-size: 100vw 100vh;         /* around images */
+}
+
+#home {
+  background-image: url(../assets/images/epic.png);
+}
+
+#wildhacks {
+  background-image: url(../assets/images/wildhacks.png);
+}
+
+#contact {
+  background-image: url(../assets/images/contact.png);
+}
+
+#launch {
+  background-image: url(../assets/images/launch.jpg);
+}
+
+#nuvc {
+  background-image: url(../assets/images/nuvc.jpg);
+}
+
+#ourstory {
+  background-image: url(../assets/images/ourstory.jpg);
+}
+
+#aboutus {
+  background-image: url(../assets/images/aboutus.png);
+}
