@@ -10,3 +10,10 @@
   background-repeat: no-repeat !important;
   background-size: 100vw 100vh;         /* around images */
 }
+
+#menu {
+  position: fixed;
+  z-index: 1000;
+  top:1em;
+  right:1em;
+}
