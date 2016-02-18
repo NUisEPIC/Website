@@ -7,39 +7,24 @@
 </head>
 
 <body class="">
-  <!-- <div id="fullpage">
-      <div class="section" id="section1">
-        <div class="slide" id="home">
-        </div>
-        <div class="slide" id="contact"></div>
-        <div class="slide" id="aboutus">
-          <div class="ui grid container">
-          </div>
-        </div>
-        <div class="slide"></div>
-        <div class="slide"></div>
-      </div>
-      <div class="section" id="section2">
-        <div class="slide"> 1 </div>
-        <div class="slide"> 2 </div>
-        <div class="slide" id="ourstory"></div>
-        <div class="slide"> 4 </div>
-        <div class="slide"> 5 </div>
-      </div>
-  </div> -->
   <button class="ui button" id="menu">
     MENU
   </button>
   <div class="flowtime">
     <div class="ft-section" data-title="Home">
-      <div class="ft-page" style="background-image: url(assets/images/epic.png);" data-title="">
+      <div class="ft-page" data-title="">
+        <div id="home">
+            <img src="assets/logos/epic_full.png" class="ui centered large image"></img>
+        </div>
       </div>
     </div>
     <div class="ft-section" data-title="About Us">
-      <div class="ft-page" style="background-image: url(assets/images/aboutus.png);" data-title=""></div>
+      <div class="ft-page" style="background-color: RGB(53, 48, 44);" data-title="">
+        <img src="assets/logos/epic.png" class="ui centered large image"></img>
+      </div>
       <div class="ft-page" style="background-image: url(assets/images/ourstory.jpg);" data-title="Our Story"></div>
       <div class="ft-page" style="background-color: RGB(45, 45, 45);" data-title="2015">
-        <div class="ui padded grid">
+        <div class="ui grid">
           <div class="ui centered row">
             <div class="ui huge inverted horizontal statistic">
               <div class="value">
@@ -276,17 +261,35 @@
         </div>
       </div>
     </div>
-    <div class="ft-section" data-title="Programs">
-      <div class="ft-page" data-title="">Programs</div>
-      <div class="ft-page" style="background-image: url(assets/images/launch.jpg);" data-title="Launch">
-        <div class="ui center aligned grid">
-            <div class="ui inverted button">
-              MORE INFO
-            </div>
+    <div class="ft-section" data-title="Launch">
+      <div class="ft-page" style="background-image: url(assets/images/launch.jpg);" data-title="">
+        <div style="text-align:center;">
+          <img src="assets/logos/launch.png" class="ui centered large image"></img>
+          <div class="ui inverted button">
+            MORE INFO
+          </div>
         </div>
       </div>
-      <div class="ft-page" style="background-image: url(assets/images/nuvc.jpg);" data-title="NUVC"></div>
-      <div class="ft-page" style="background-image: url(assets/images/wildhacks.png);" data-title="Wildhacks"></div>
+    </div>
+    <div class="ft-section" data-title="NUVC">
+      <div class="ft-page" style="background-image: url(assets/images/nuvc.jpg);" data-title="NUVC">
+        <div style="text-align:center;">
+          <img src="assets/logos/nuvc.png" class="ui centered large image"></img>
+          <div class="ui inverted button">
+            MORE INFO
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="ft-section" data-title="NUVC">
+      <div class="ft-page" style="background-image: url(assets/images/wildhacks.jpg);" data-title="Wildhacks">
+        <div style="text-align:center;">
+          <img src="assets/logos/wildhacks.png" class="ui centered large image"></img>
+          <div class="ui inverted button">
+            MORE INFO
+          </div>
+        </div>
+      </div>
     </div>
     <div class="ft-section" data-title="Contact">
       <div class="ft-page" style="background-image: url(assets/images/contact.png);" data-title="">
@@ -306,5 +309,5 @@
 <script src="bower_components/semantic/dist/semantic.js"></script>
 <script src="bower_components/Flowtime.js/js/brav1toolbox.js"></script>
 <script src="bower_components/Flowtime.js/js/flowtime.js"></script>
-<script src="js/carousel.js"></script>
+<script src="js/flowtime.js"></script>
 </html>
