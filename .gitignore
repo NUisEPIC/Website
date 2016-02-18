@@ -34,3 +34,6 @@ node_modules
 
 # Bower dependencies
 public/bower_components
+
+# Environment files
+.env
