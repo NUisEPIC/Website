@@ -11,6 +11,8 @@
     MENU
   </button>
   <div class="flowtime">
+
+
     <div class="ft-section" data-title="Home">
       <div class="ft-page" data-title="">
         <div id="home">
@@ -18,15 +20,22 @@
         </div>
       </div>
     </div>
+
+
+
+
     <div class="ft-section" data-title="About Us">
-      <div class="ft-page" style="background-color: RGB(53, 48, 44);" data-title="">
+
+      <div class="ft-page" data-title="">
         <div id="aboutus">
           <img src="assets/logos/epic.png" class="ui centered large image"></img>
         </div>
       </div>
-      <div class="ft-page" style="background-image: url(assets/images/ourstory.jpg);" data-title="Our Story"></div>
-      <div class="ft-page" style="background-color: RGB(45, 45, 45); height:100%; width:auto;" data-title="2015">
-        <div class="ui padded grid">
+
+
+      <div class="ft-page" data-title="Our Story" style="background-color: red;"></div>
+      <div class="ft-page" style="background-color: RGB(45, 45, 45);" data-title="2015">
+        <div class="ui grid">
           <div class="ui centered row">
             <div class="ui huge inverted horizontal statistic">
               <div class="value">
@@ -105,7 +114,7 @@
         </div>
       </div>
       <div class="ft-page" style="background-color: RGB(45, 45, 45);" data-title="2014">
-        <div class="ui grid">
+        <div class="ui padded grid">
           <div class="ui centered row">
             <div class="ui huge inverted horizontal statistic">
               <div class="value">
@@ -184,7 +193,7 @@
         </div>
       </div>
       <div class="ft-page" style="background-color: RGB(45, 45, 45);" data-title="2013">
-        <div class="ui grid">
+        <div class="ui padded grid">
           <div class="ui centered row">
             <div class="ui huge inverted horizontal statistic">
               <div class="value">
@@ -294,7 +303,50 @@
       </div>
     </div>
     <div class="ft-section" data-title="Contact">
-      <div class="ft-page" style="background-image: url(assets/images/contact.png);" data-title="">
+      <div class="ft-page" style="" data-title="" >
+      <div id="contact">
+        <div class="ui middle aligned centered grid">
+            <div id="header" class="ui container">
+             <br>
+             <br>
+             <br>
+             <br>
+             <br>
+              <h1 class="inverted">CONTACT US</h1>
+              <br>
+              <h2>EPIC 2014 | Northwestern University | 2135 Sheridan Road</h2>
+              <div id="formDiv">
+                <div id="insideDiv">
+                  NAME
+                  <br>
+                  <input class="inputForm" type="text"></input>
+                </div>
+                <div id="insideDiv" style="margin-left:20%;">
+                  EMAIL
+                  <br>
+                  <input class="inputForm" type="text" ></input>
+                </div>
+                <br>
+                <br>
+                <div id="subscribeDiv">
+                  <input id="insideComment" type="text"></input>
+                  <br>
+                  <br>
+                  <input id="submitCheck" type="checkbox" value="submitBool">
+                  SUBSCRIBE TO OUR NEWSLETTER!
+                  
+                  <br>
+                  <br>
+                  <button onclick="Subscribe()" id="submitButton" type="submit">SUBMIT</button>
+                </div>
+
+                  
+              </div>
+
+
+            </div>
+        </div>
+      </div>
       </div>
     </div>
   </div>
