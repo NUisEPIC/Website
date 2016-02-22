@@ -1,6 +1,30 @@
-* {
-  font-weight: normal !important;
+@font-face {
+    font-family: Montserrat;
+    src: url(../assets/fonts/Montserrat-Regular.ttf);
 }
+@font-face {
+    font-family: Montserrat;
+    src: url(../assets/fonts/Montserrat-Regular.ttf);
+}
+@font-face {
+    font-family: Montserrat;
+    src: url(../assets/fonts/Montserrat-Bold.ttf);
+    font-style: bold;
+}
+@font-face {
+    font-family: Raleway;
+    src: url(../assets/fonts/Raleway-Regular.ttf);
+}
+@font-face {
+    font-family: Raleway;
+    src: url(../assets/fonts/Raleway-Bold.ttf);
+    font-style: bold;
+}
+
+* {
+  font-family: Raleway;
+}
+
 
 .ft-page, .ft-section {
   height: 100vh;
@@ -13,6 +37,7 @@
 .ui.grid {
   margin:0;
   height:100%;
+  width:100%;
 }
 
 
@@ -21,6 +46,9 @@
   z-index: 1000;
   top:1em;
   right:1em;
+  height: 7%;
+  width: auto;
+  outline:none;
 }
 
 /*
