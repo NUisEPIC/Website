@@ -1,8 +1,14 @@
 // index.js
-
+'use strict';
 const express = require('express');
 const env = require('node-env-file');
 const app = express();
+const bodyParser = require('body-parser');
+
+app.use(bodyParser.json());       // to support JSON-encoded bodies
+app.use(bodyParser.urlencoded({     // to support URL-encoded bodies
+  extended: true
+}));
 
 env(__dirname + '/.env');
 
@@ -22,7 +28,7 @@ app.get('/hello', (req, res) => {
 
 app.post('/send', (req, res) => {
   let message = req.body;
-
+  console.log(req.body);
   mandrill('/messages/send', {
     message: {
       to: [{email: 'contact@nuisepic.com', name: 'EPIC'}],

@@ -21,6 +21,7 @@
   },
   "homepage": "https://github.com/NUisEPIC/website#readme",
   "dependencies": {
+    "body-parser": "^1.15.0",
     "express": "^4.13.4",
     "node-env-file": "^0.1.8",
     "node-mandrill": "^1.0.1"
