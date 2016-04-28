@@ -4,6 +4,9 @@ const express = require('express');
 const env = require('node-env-file');
 const app = express();
 const bodyParser = require('body-parser');
+const ejs = require('ejs');
+
+const mailgun = require('mailgun-js')({apiKey: process.env.MAILGUN_API_KEY, domain: process.env.MAILGUN_DOMAIN});
 
 app.use(bodyParser.json());       // to support JSON-encoded bodies
 app.use(bodyParser.urlencoded({     // to support URL-encoded bodies
@@ -12,38 +15,48 @@ app.use(bodyParser.urlencoded({     // to support URL-encoded bodies
 
 env(__dirname + '/.env');
 
-const mandrill = require('node-mandrill')(process.env.MANDRILL_API_KEY);
-
 app.set('port', process.env.PORT || 8000);
 
 app.use(express.static(__dirname + '/public'));
+app.set('views', __dirname + '/public');
+
+
+app.engine('html', ejs.__express);
+app.set('view engine', 'ejs');
+
 
 app.get('/', (req, res) => {
-  res.sendFile('index.html');
+  res.render('index');
 });
 
-app.get('/hello', (req, res) => {
-  res.send('hello world');
-});
-
-app.post('/send', (req, res) => {
+app.post('/api/email', (req, res) => {
   let message = req.body;
-  console.log(req.body);
-  mandrill('/messages/send', {
-    message: {
-      to: [{email: 'contact@nuisepic.com', name: 'EPIC'}],
-      from_email: message.sender_email,
-      subject: 'Message from ' + message.sender_name,
-      text: message.email_text
-    }
-  }, (error, response) => {
-    if (error) {
-      res.send(error);
-    }
-    res.json(response);
+  let data = {
+    from: message.sender_name + ' <' + message.sender_email + '>',
+    to: message.recipient_email,
+    subject: 'Message from ' + message.sender_name,
+    text: message.text
+  };
+
+  // mailgun request body example
+  // var data = {
+  //   from: 'Excited User <me@samples.mailgun.org>', //Format for alias: 'Excited User <me@samples.mailgun.org>'
+  //   to: 'aaron@womentum.io',
+  //   subject: 'Hello',
+  //   text: 'Hello World!'
+  // };
+
+  mailgun.messages().send(data, function (error, result) {
+    if (error) res.json(error);
+    res.json(result);
   });
 });
 
+
+app.get('*', (req, res) => {
+  res.render('index.html');
+});
+
 app.listen(app.get('port'), () => {
-  console.log('Listening on port ' + app.get('port'));
+  console.log('Listening on port ' + app.get('port') + ' in ' + process.env.NODE_ENV);
 });

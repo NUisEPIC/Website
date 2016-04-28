@@ -6,12 +6,11 @@
 <link rel="stylesheet" href="css/app.css">
 </head>
 
-<body class="">
-    <input type="image" src="assets/icons/menu.png" class="ui tiny image" id="menu">
+<body>
+  <% include views/menu.html %>
+  <input type="image" src="assets/icons/menu.png" class="ui tiny image" id="nav">
   </input>
   <div class="flowtime">
-
-
     <div class="ft-section" data-title="Home">
       <div class="ft-page" data-title="">
         <div id="home" class="ui grid">
@@ -388,15 +387,14 @@
                   <br>
                   <button id="submitButton" type="submit">SUBMIT</button>
                 </form>
-
-
               </div>
-
-
             </div>
         </div>
       </div>
       </div>
+    </div>
+    <div id="inject">
+
     </div>
   </div>
 </body>
@@ -407,4 +405,9 @@
 <script src="bower_components/Flowtime.js/js/brav1toolbox.js"></script>
 <script src="bower_components/Flowtime.js/js/flowtime.js"></script>
 <script src="js/flowtime.js"></script>
+<script>
+  $(document).ready(function(){
+
+  })
+</script>
 </html>
