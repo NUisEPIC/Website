@@ -5,7 +5,7 @@ Flowtime.start();
 
 $(document).ready(function() {
   // $('#home').load('./views/home.html');
-  $('#menu').click(function() {
+  $('#nav').click(function() {
     Flowtime.toggleOverview(true);
   });
 })

@@ -1,9 +1,18 @@
 <html>
 <head>
+<!-- Temporary config file for keys -->
+<script src="js/env.js"></script>
+
 <!-- Stylesheets -->
 <link rel="stylesheet" href="bower_components/Flowtime.js/css/flowtime.css">
 <link rel="stylesheet" href="bower_components/semantic/dist/semantic.css">
 <link rel="stylesheet" href="css/app.css">
+
+<!-- Scripts -->
+<script src="bower_components/jquery/dist/jquery.js"></script>
+<script src="bower_components/semantic/dist/semantic.js"></script>
+<script src="bower_components/moment/moment.js"></script>
+
 </head>
 
 <body>
@@ -16,19 +25,16 @@
     <% include views/launch.html %>
     <% include views/nuvc.html %>
     <% include views/wildhacks.html %>
+    <% include views/teams.html %>
     <% include views/contact.html %>
+    <% include views/calendartest.html %>
+    <% include views/ghost.html %>
   </div>
 </body>
 
-<!-- Scripts -->
-<script src="bower_components/jquery/dist/jquery.js"></script>
-<script src="bower_components/semantic/dist/semantic.js"></script>
+<!-- Flowtime (Must be included after DOM is loaded) -->
 <script src="bower_components/Flowtime.js/js/brav1toolbox.js"></script>
 <script src="bower_components/Flowtime.js/js/flowtime.js"></script>
 <script src="js/flowtime.js"></script>
-<script>
-  $(document).ready(function(){
 
-  })
-</script>
 </html>
