@@ -19,6 +19,7 @@
     "Flowtime.js": "flowtime#*",
     "semantic": "semantic-ui#~2.1.8",
     "jquery": "~2.2.0",
-    "moment": "~2.13.0"
+    "moment": "~2.13.0",
+    "amcharts": "~3.15.2"
   }
 }
