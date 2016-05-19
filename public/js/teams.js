@@ -44,7 +44,8 @@ AmCharts.ready(function () {
     chart.dataProvider = chartData;
     chart.titleField = "team";
     chart.valueField = "size";
-    chart.hideLabelsPercent = 100;
+    chart.labelText= "[[title]]";
+    chart.balloonText= "";
     chart.outlineColor = "#FFFFFF";
     chart.outlineAlpha = 0.5;
     chart.outlineThickness = 1;
