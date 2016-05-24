@@ -25,18 +25,37 @@ var legend;
 // }];
 
 var chartData = [{
-  team: "Team1",
-  size: 25
+  team: "WildHacks",
+  size: 14.28,
+  blurb: "Wildhacks plans and executes a hackathon... Check out their website at:"
 }, {
-  team: "Team2",
-  size: 25
+  team: "Sprout",
+  size: 14.28,
+  blurb: "Sprout is a preorientation program..."
 }, {
-  team: "Team3",
-  size: 25
+  team: "Tech",
+  size: 14.28,
+  blurb: "Tech codes things (like this website!)... Check out our github at:"
 }, {
-  team: "Team4",
-  size: 25
-}];
+  team: "NUVC",
+  size: 14.28,
+  blurb: "NUVC plans and executes a startup pitch competition... Check out their website at:"
+},
+{
+  team: "Launch",
+  size: 14.28,
+  blurb: "Launch teaches students..."
+},
+{
+  team: "Branding",
+  size: 14.28,
+  blurb: "Branding brands EPIC and provides content..."
+},
+{
+  team: "Exec",
+  size: 14.28,
+  blurb: "Exec makes EPIC run... new initiatives..."
+},]
 
 AmCharts.ready(function () {
     // PIE CHART
@@ -44,21 +63,21 @@ AmCharts.ready(function () {
     chart.dataProvider = chartData;
     chart.titleField = "team";
     chart.valueField = "size";
-    chart.labelText= "[[title]]";
-    chart.balloonText= "";
+    chart.descriptionField="blurb";
     chart.outlineColor = "#FFFFFF";
     chart.outlineAlpha = 0.5;
     chart.outlineThickness = 1;
-
+    chart.labelText= "[[title]]";
+    chart.balloonText= "";
     chart.pullOutOnlyOne = true;
     chart.pullOutEffect = "elastic";
     // chart.clickSlice('1') = function() {
     //   console.log('1');
     // }
     chart.addListener('clickSlice', function(event) {
-      console.log(event.dataItem.title);
-      var team = event.dataItem.title;
-      document.getElementById('teamdiv').innerText = team;
+      //console.log(event.dataItem.description);
+      var about = event.dataItem.description;
+      document.getElementById('teamdiv').innerText = about;
     });
     // console.log(chart.clickSlice(index))
 
