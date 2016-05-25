@@ -11,7 +11,7 @@ ghost.init({
     header.appendChild(document.createTextNode('Recent News: '));
     $.each(data.posts, function (i, post) {
         var card = blog.appendChild(document.createElement('div'));
-        $(card).addClass('ui centered card');
+        $(card).addClass('ui centered fluid card');
 
         var cardContent = card.appendChild(document.createElement('div'));
         $(cardContent).addClass('content');

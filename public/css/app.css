@@ -56,16 +56,16 @@
  *  Format Pages
  */
 
-#home {
-  background-color: RGB(142, 142, 142);
-  height:100%; width:auto;
-}
-
 #aboutus{
   background-color: RGB(53, 48, 44);
   height:100%; width:auto;
 }
 
+.feed > .segment {
+  max-height: 400px;
+  overflow: auto;
+  padding: 10px 50px;
+}
 
 #contact{
   width: 100%;
@@ -199,7 +199,4 @@
 
 #chartdiv {
   height: 400px;
-}
-#teamdiv {
-  text-align: center;
 }

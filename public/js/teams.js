@@ -54,7 +54,7 @@ var chartData = [{
 {
   team: "Exec",
   size: 14.28,
-  blurb: "Exec makes EPIC run... new initiatives..."
+  blurb: "Exec makes EPIC run... new initiatives... Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc a mi lacinia, sollicitudin nulla nec, pellentesque ante. Proin in iaculis ipsum. Etiam tempor justo quis magna consectetur, aliquam rhoncus sapien viverra. Suspendisse lectus odio, vulputate vel iaculis laoreet, cursus eget sem. Fusce non tincidunt metus, ac tempus urna. Ut tincidunt metus in sem dignissim, ut tempus nibh efficitur. Quisque sed ultricies nunc. Mauris vitae orci eget tellus porta scelerisque rutrum eu massa. Pellentesque sit amet libero lobortis, convallis tortor sed, tempus nibh. Cras justo ex, laoreet ut cursus sed, finibus et ex. Nulla convallis orci elit, sed porttitor turpis tempus vel. Maecenas sed mauris imperdiet, varius odio sit amet, venenatis ipsum. Vestibulum ultricies ipsum erat, ut tempus massa pretium eget."
 },]
 
 AmCharts.ready(function () {

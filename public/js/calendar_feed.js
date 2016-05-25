@@ -90,7 +90,7 @@ function displayResults(events) {
       }
 
       var card = feed.appendChild(document.createElement('div'));
-      $(card).addClass('ui centered card');
+      $(card).addClass('ui centered fluid card');
 
       var cardContent = card.appendChild(document.createElement('div'));
       $(cardContent).addClass('content');
