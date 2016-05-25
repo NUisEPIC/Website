@@ -78,7 +78,8 @@
        * @param {string} message Text to be placed in pre element.
        */
       function displayResults(events) {
-        var header = output.appendChild(document.createElement('h1'));
+        var feed = $('#event-feed')[0];
+        var header = feed.appendChild(document.createElement('h1'));
 
         if (events.length > 0) {
           header.appendChild(document.createTextNode('Upcoming Events: '));
@@ -89,7 +90,7 @@
               when = event.start.date;
             }
 
-            var card = output.appendChild(document.createElement('div'));
+            var card = feed.appendChild(document.createElement('div'));
             $(card).addClass('ui card')
 
             var cardContent = card.appendChild(document.createElement('div'));
@@ -117,7 +118,7 @@
       <div class="ft-page" data-title="">
         <div class="ui grid">
           <div class="centered row">
-            <div id="output"></div>
+            <div id="feed"></div>
           </div>
         </div>
       </div>

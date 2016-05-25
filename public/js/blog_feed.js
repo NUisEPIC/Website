@@ -4,13 +4,35 @@ ghost.init({
  });
 
  function onSuccess(data) {
-  var $result = $('#blog-posts');
-  $.each(data.posts, function (i, post) {
-    $result.append(
-      '<li>' + post.title + '</li> \n' +
-      '<li>' + post.markdown + '</li>'
-    );
-  });
+  var blog = $('#blog-feed')[0];
+  var header = blog.appendChild(document.createElement('h1'));
+
+  if (data.posts.length > 0) {
+    header.appendChild(document.createTextNode('Recent News: '));
+    $.each(data.posts, function (i, post) {
+        var card = blog.appendChild(document.createElement('div'));
+        $(card).addClass('ui centered card');
+
+        var cardContent = card.appendChild(document.createElement('div'));
+        $(cardContent).addClass('content');
+
+        var eventName = cardContent.appendChild(document.createElement('a'));
+        eventName.appendChild(document.createTextNode(post.title));
+        $(eventName).addClass('header');
+
+        var eventTime = cardContent.appendChild(document.createElement('div'));
+        eventTime.appendChild(document.createTextNode(moment(post.created_at).format('llll')));
+        $(eventTime).addClass('meta');
+
+        var eventDescription = cardContent.appendChild(document.createElement('div'));
+        eventDescription.appendChild(document.createTextNode(post.markdown));
+        $(eventDescription).addClass('description');
+    });
+  }
+  else {
+    header.appendChild(document.createTextNode('No News'));
+  }
+
 }
 
 $(document).ready(function () {
