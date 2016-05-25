@@ -64,6 +64,8 @@ AmCharts.ready(function () {
     chart.titleField = "team";
     chart.valueField = "size";
     chart.descriptionField="blurb";
+    chart.fontFamily = "inherit";
+    chart.fontSize = "16";
     chart.outlineColor = "#FFFFFF";
     chart.outlineAlpha = 0.5;
     chart.outlineThickness = 1;
