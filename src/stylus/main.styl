@@ -15,6 +15,46 @@ section.ui.grid
   margin 200px 0
   height 200px
 
+#about-us
+  position relative
+    
+  .pictures
+    image-container-width = 225px
+    image-height = 150px
+    fake-padding = 20px
+
+    position absolute
+    top 0
+    width image-container-width
+
+    &.left
+      left fake-padding
+
+      img:nth-child(odd)
+        left (image-height/3)px
+
+    &.right
+      right fake-padding
+
+      img:nth-child(odd)
+        right (image-height/3)px
+
+    img
+      margin 20px 0
+      height image-height
+      border 5px solid white
+
+      position relative
+
+      &:nth-child(even)
+        transform rotateZ(2deg)
+
+      &:nth-child(odd)
+        transform rotateZ(-2deg)
+
+      @media screen and (max-width: 1000px)
+        display none
+
 section.ui.grid:nth-child(even)
   position relative
 
