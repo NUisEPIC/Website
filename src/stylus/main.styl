@@ -1,7 +1,7 @@
 section.ui.grid
   margin 0
-  height 100%
   width  100%
+  min-height 60%
 
 .feed > .segment
   padding 10px 50px
@@ -12,12 +12,17 @@ section.ui.grid
   height 600px
 
 section.ui.grid:nth-child(even)
-  background #ffbaba
   position relative
 
-  margin 20% 0
+  //background #f55
+  background linear-gradient(to top right, #ff5555, #faa)
 
-  height 60%
+  color white
+
+  // NOTE(jordan): this works better hard-coded. There's probably an arithmetic
+  // formula for picking this value based on screen width and rotation amount, but
+  // this is fine for now.
+  margin 250px 0
 
   &::before
     position absolute
