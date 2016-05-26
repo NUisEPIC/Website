@@ -87,10 +87,10 @@ AmCharts.ready(function () {
     chart.addListener('clickSlice', function(event) {
       //console.log(event.dataItem.description);
       var about = event.dataItem.description;
-      document.getElementById('teamdiv').innerText = about;
+      document.getElementById('team').innerText = about;
     });
     // console.log(chart.clickSlice(index))
 
     // WRITE
-    chart.write("chartdiv");
+    chart.write("chart");
 });
