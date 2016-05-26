@@ -1,6 +1,37 @@
-h1
-  font-family: sans-serif
+section.ui.grid
+  margin 0
+  height 100%
+  width  100%
 
-h2
-  font-family: sans-serif
+.feed > .segment
+  padding 10px 50px
+  max-height 400px
+  overflow auto
+
+#chart
+  height 600px
+
+section.ui.grid:nth-child(even)
+  background #ffbaba
+  position relative
+
+  margin 20% 0
+
+  height 60%
+
+  &::before
+    position absolute
+    display block
+
+    background inherit
+
+    width 110%
+    height 130%
+
+    left -5%
+    top -15%
+
+    transform rotateZ(-3deg)
+
+    content ''
 
