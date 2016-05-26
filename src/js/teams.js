@@ -87,7 +87,7 @@ AmCharts.ready(function () {
     chart.addListener('clickSlice', function(event) {
       //console.log(event.dataItem.description);
       var about = event.dataItem.description;
-      document.getElementById('team').innerText = about;
+      document.getElementById('team-info').innerText = about;
     });
     // console.log(chart.clickSlice(index))
 
