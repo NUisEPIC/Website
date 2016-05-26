@@ -1,0 +1,36 @@
+doctype html
+html(lang='en')
+  head
+    link(rel='stylesheet', type='text/css', href='bower_components/semantic/dist/semantic.css')
+    link(rel='stylesheet', type='text/css', href='main.css')
+
+    script(src='bower_components/jquery/dist/jquery.js')
+    script(src='bower_components/semantic/dist/semantic.js')
+    script(src='bower_components/moment/moment.js')
+    script(src='bower_components/amcharts/dist/amcharts/amcharts.js')
+    script(src='bower_components/amcharts/dist/amcharts/pie.js')
+    script(src='bower_components/typed.js/js/typed.js')
+
+    script(src='//localhost:2368/shared/ghost-url.min.js')
+
+    script(src='js/teams.js')
+    script(src='js/calendar_feed.js')
+    script(src='js/blog_feed.js')
+
+    script(src='https://apis.google.com/js/client.js?onload=loadCalendarApi')
+
+    script.
+      $(function () {
+        $('#typed').typed({
+          strings: [ '', 'Entrepreneurs.', '', 'Pioneers.', '', 'Innovators.', '', 'Creators.' ],
+          typeSpeed: 50,
+          loop: true,
+          showCursor: false
+        })
+      })
+
+  body
+    include ./home
+    include ./about
+    include ./teams
+

@@ -33,7 +33,7 @@ node_modules
 .node_repl_history
 
 # Bower dependencies
-public/bower_components
+src/bower_components
 
 # Environment files
 .env
@@ -41,3 +41,6 @@ public/js/env.js
 
 #
 .jshintrc
+
+# temporary build files
+.tmp
