@@ -46,6 +46,18 @@
   height:100%; width:auto;
 }
 
+@media screen and (max-width: 1000px){ 
+  #about-us img.pictures{
+    height: 100px;
+    display: none;
+  }
+}
+
+#about-us img.pictures {
+  height: 200px;
+  padding: 40px 0px;
+}
+
 .feed > .segment {
   max-height: 400px;
   overflow: auto;
