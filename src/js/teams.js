@@ -28,41 +28,36 @@ var chartData = [{
   team: "WildHacks",
   size: 14.28,
   blurb: "Wildhacks plans and executes a hackathon... Check out their website at:",
-  color: "#d28747"
+  color: "#33c0cd"
 }, {
   team: "Sprout",
   size: 14.28,
   blurb: "Sprout is a preorientation program...",
-  color: "#f5ab0c"
+  color: "#c15c65"
 }, {
   team: "Tech",
   size: 14.28,
   blurb: "Tech codes things (like this website!)... Check out our github at:",
-  color: "#e7431e"
+  color: "#fac440"
 }, {
   team: "NUVC",
   size: 14.28,
   blurb: "NUVC plans and executes a startup pitch competition... Check out their website at:",
-  color: "#a10f08"
+  color: "#a4e8de"
 },
 {
   team: "Launch",
   size: 14.28,
   blurb: "Launch teaches students...",
-  color: "#eeb96b"
+  color: "#b31b28"
 },
 {
   team: "Branding",
   size: 14.28,
   blurb: "Branding brands EPIC and provides content...",
-  color: "#f5debe"
+  color: "#fbe5af"
 },
-{
-  team: "Exec",
-  size: 14.28,
-  blurb: "Exec makes EPIC run... new initiatives... Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc a mi lacinia, sollicitudin nulla nec, pellentesque ante. Proin in iaculis ipsum. Etiam tempor justo quis magna consectetur, aliquam rhoncus sapien viverra. Suspendisse lectus odio, vulputate vel iaculis laoreet, cursus eget sem. Fusce non tincidunt metus, ac tempus urna. Ut tincidunt metus in sem dignissim, ut tempus nibh efficitur. Quisque sed ultricies nunc. Mauris vitae orci eget tellus porta scelerisque rutrum eu massa. Pellentesque sit amet libero lobortis, convallis tortor sed, tempus nibh. Cras justo ex, laoreet ut cursus sed, finibus et ex. Nulla convallis orci elit, sed porttitor turpis tempus vel. Maecenas sed mauris imperdiet, varius odio sit amet, venenatis ipsum. Vestibulum ultricies ipsum erat, ut tempus massa pretium eget.",
-  color: "#e83140"
-},]
+]
 
 AmCharts.ready(function () {
     // PIE CHART
