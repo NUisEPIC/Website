@@ -4,33 +4,33 @@ ghost.init({
  });
 
  function onSuccess(data) {
-  var blog = $('#blog-feed')[0];
-  var header = blog.appendChild(document.createElement('h1'));
+  var feed = $('#blog-feed')[0];
 
   if (data.posts.length > 0) {
-    header.appendChild(document.createTextNode('Recent News: '));
     $.each(data.posts, function (i, post) {
-        var card = blog.appendChild(document.createElement('div'));
-        $(card).addClass('ui centered fluid card');
+      var item = feed.appendChild(document.createElement('div'));
+      $(item).addClass('item');
 
-        var cardContent = card.appendChild(document.createElement('div'));
-        $(cardContent).addClass('content');
+      var thumbnail = $(item).append("<img class='ui image thumbnail' src='http://localhost:2368" + post.image + "' />");
 
-        var eventName = cardContent.appendChild(document.createElement('a'));
-        eventName.appendChild(document.createTextNode(post.title));
-        $(eventName).addClass('header');
+      var description = item.appendChild(document.createElement('div'));
+      $(description).addClass('middle aligned content description');
 
-        var eventTime = cardContent.appendChild(document.createElement('div'));
-        eventTime.appendChild(document.createTextNode(moment(post.created_at).format('llll')));
-        $(eventTime).addClass('meta');
+      var eventName = description.appendChild(document.createElement('a'));
+      eventName.appendChild(document.createTextNode(post.title));
+      $(eventName).addClass('header');
 
-        var eventDescription = cardContent.appendChild(document.createElement('div'));
-        eventDescription.appendChild(document.createTextNode(post.markdown));
-        $(eventDescription).addClass('description');
+      var eventTime = description.appendChild(document.createElement('div'));
+      eventTime.appendChild(document.createTextNode(moment(post.created_at).format('llll')));
+      $(eventTime).addClass('meta');
+
+      var descriptionDiv = description.appendChild(document.createElement('div'));
+      var descriptionText = descriptionDiv.appendChild(document.createElement('p'));
+      descriptionText.appendChild(document.createTextNode(post.markdown));
     });
   }
   else {
-    header.appendChild(document.createTextNode('No News'));
+    feed.appendChild(document.createTextNode('No News'));
   }
 
 }

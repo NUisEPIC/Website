@@ -78,36 +78,46 @@ function listUpcomingEvents() {
  */
 function displayResults(events) {
   var feed = $('#event-feed')[0];
-  var header = feed.appendChild(document.createElement('h1'));
 
   if (events.length > 0) {
-    header.appendChild(document.createTextNode('Upcoming Events: '));
     for (i = 0; i < events.length; i++) {
       var event = events[i];
-      var when = new Date(event.start.dateTime);
+      var when = moment(new Date(event.start.dateTime));
       if (!when) {
-        when = event.start.date;
+        when = moment(event.start.date);
       }
 
-      var card = feed.appendChild(document.createElement('div'));
-      $(card).addClass('ui centered fluid card');
+      var item = feed.appendChild(document.createElement('div'));
+      $(item).addClass('item');
 
-      var cardContent = card.appendChild(document.createElement('div'));
-      $(cardContent).addClass('content');
+      var calendar = item.appendChild(document.createElement('div'));
+      $(calendar).addClass('ui image calendar');
+      var month = calendar.appendChild(document.createElement('div'));
+      $(month).addClass('month');
+      var monthText = month.appendChild(document.createElement('h2'));
+      monthText.appendChild(document.createTextNode(when.format('MMM')));
+      var date = calendar.appendChild(document.createElement('div'));
+      $(date).addClass('date');
+      var dateText = date.appendChild(document.createElement('h2'));
+      dateText.appendChild(document.createTextNode(when.format('Do')));
 
-      var eventName = cardContent.appendChild(document.createElement('a'));
+      var description = item.appendChild(document.createElement('div'));
+      $(description).addClass('middle aligned content description');
+
+      var eventName = description.appendChild(document.createElement('a'));
       eventName.appendChild(document.createTextNode(event.summary));
       $(eventName).addClass('header');
 
-      var eventTime = cardContent.appendChild(document.createElement('div'));
-      eventTime.appendChild(document.createTextNode(moment(when).format('llll')));
+      var eventTime = description.appendChild(document.createElement('div'));
+      eventTime.appendChild(document.createTextNode(when.format('llll')));
       $(eventTime).addClass('meta');
 
-      var eventDescription = cardContent.appendChild(document.createElement('div'));
-      eventDescription.appendChild(document.createTextNode(event.description));
-      $(eventDescription).addClass('description');
+      var descriptionDiv = description.appendChild(document.createElement('div'));
+      var descriptionText = descriptionDiv.appendChild(document.createElement('p'));
+      descriptionText.appendChild(document.createTextNode(event.description));
+
     }
   } else {
-    header.appendChild(document.createTextNode('No upcoming events'));
+    feed.appendChild(document.createTextNode('No upcoming events'));
   }
 }
