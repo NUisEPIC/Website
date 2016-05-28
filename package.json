@@ -27,5 +27,12 @@
     "mailchimp-api": "^2.0.7",
     "mailgun-js": "^0.7.10",
     "node-env-file": "^0.1.8"
+  },
+  "devDependencies": {
+    "browser-sync": "^2.12.8",
+    "gulp": "^3.9.1",
+    "gulp-jade": "^1.1.0",
+    "gulp-load-plugins": "^1.2.4",
+    "gulp-stylus": "^2.4.0"
   }
 }
