@@ -37,7 +37,7 @@ src/bower_components
 
 # Environment files
 .env
-public/js/env.js
+src/js/env.js
 
 #
 .jshintrc

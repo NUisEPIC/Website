@@ -1,9 +1,8 @@
 doctype html
 html(lang='en')
   head
-    link(rel='stylesheet', type='text/css', href='https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.1.8/semantic.css')
+    link(rel='stylesheet', type='text/css', href='bower_components/semantic/dist/semantic.css')
     link(rel='stylesheet', type='text/css', href='main.css')
-    link(rel='stylesheet', type='text/css', href='css/app.css')
 
     script(src='bower_components/jquery/dist/jquery.js')
     script(src='bower_components/semantic/dist/semantic.js')
@@ -14,6 +13,8 @@ html(lang='en')
 
     script(src='//localhost:2368/shared/ghost-url.min.js')
 
+    script(src='js/env.js')
+    script(src='js/subscribe.js')
     script(src='js/teams.js')
     script(src='js/calendar_feed.js')
     script(src='js/blog_feed.js')
@@ -31,6 +32,7 @@ html(lang='en')
       })
 
   body
+    include ./menu
     include ./home
     include ./about
     include ./teams

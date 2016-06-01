@@ -1,0 +1,26 @@
+.ui.large.modal#subscribe
+  center.aligned.header EPIC Newsletter Subscription
+  .content
+    form.ui.form
+      label Name
+      .field
+        .two.fields
+          .field
+            input(type="text", name="firstName", placeholder="First Name")
+          .field
+            input(type="text", name="lastName", placeholder="Last Name")
+      label Email Address
+      .field
+        .field
+          input(type="email", name="email", placeholder="Email")
+      label Which newsletter would you like to subscribe to?
+      .grouped.fields
+        .field
+          .ui.checkbox
+            input(type="checkbox" name="student" checked="checked")
+            label Student
+        .field
+          .ui.checkbox
+            input(type="checkbox" name="alumni")
+            label Alumni
+      .ui.green.fluid.button Subscribe!
