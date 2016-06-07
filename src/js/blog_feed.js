@@ -16,17 +16,17 @@ ghost.init({
       var description = item.appendChild(document.createElement('div'));
       $(description).addClass('middle aligned content description');
 
-      var eventName = description.appendChild(document.createElement('a'));
-      eventName.appendChild(document.createTextNode(post.title));
-      $(eventName).addClass('header');
+      var title = description.appendChild(document.createElement('a'));
+      title.appendChild(document.createTextNode(post.title));
+      $(title).addClass('header');
 
-      var eventTime = description.appendChild(document.createElement('div'));
-      eventTime.appendChild(document.createTextNode(moment(post.created_at).format('llll')));
-      $(eventTime).addClass('meta');
+      var time = description.appendChild(document.createElement('div'));
+      time.appendChild(document.createTextNode(moment(post.created_at).format('llll')));
+      $(time).addClass('meta');
 
-      var descriptionDiv = description.appendChild(document.createElement('div'));
-      var descriptionText = descriptionDiv.appendChild(document.createElement('p'));
-      descriptionText.appendChild(document.createTextNode(post.markdown));
+      var bodyDiv = description.appendChild(document.createElement('div'));
+      var bodyText = bodyDiv.appendChild(document.createElement('p'));
+      bodyText.appendChild(document.createTextNode(post.markdown.substring(0,100) + '...'));
     });
   }
   else {
