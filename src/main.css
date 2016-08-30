@@ -1,0 +1,110 @@
+body {
+  margin-top: 40px;
+}
+section.ui.grid {
+  margin: 0;
+  width: 100%;
+  min-height: 600px;
+}
+.feed {
+  padding: 10px 50px;
+  max-height: 400px;
+  overflow: auto;
+}
+.feed > .item {
+  height: 85px;
+}
+.item > .calendar {
+  font-size: 2em;
+  height: inherit;
+  width: 80px;
+  border: 4px #000 solid;
+  float: left;
+  text-align: center;
+  border-radius: 5px;
+}
+.calendar > .month {
+  height: 28px;
+  background-color: #f00;
+  color: #fff;
+}
+.calendar > .date {
+  height: 56px;
+  padding: 10px;
+}
+.item > .description {
+  height: inherit;
+  margin-left: 90px;
+}
+.item > .thumbnail {
+  width: 100px;
+  max-height: 100px;
+}
+#chart {
+  height: 600px;
+}
+#team-info {
+  margin: 200px 0;
+  height: 200px;
+}
+#about-us {
+  position: relative;
+}
+#about-us .pictures {
+  position: absolute;
+  top: 0;
+  width: 225px;
+}
+#about-us .pictures.left {
+  left: 20px;
+}
+#about-us .pictures.left img:nth-child(odd) {
+  left: 50px;
+}
+#about-us .pictures.right {
+  right: 20px;
+}
+#about-us .pictures.right img:nth-child(odd) {
+  right: 50px;
+}
+#about-us .pictures img {
+  margin: 20px 0;
+  height: 150px;
+  border: 5px solid #fff;
+  position: relative;
+}
+#about-us .pictures img:nth-child(even) {
+  transform: rotateZ(2deg);
+}
+#about-us .pictures img:nth-child(odd) {
+  transform: rotateZ(-2deg);
+}
+@media screen and (max-width: 1000px) {
+  #about-us .pictures img {
+    display: none;
+  }
+}
+#footer {
+  margin: 0px;
+  border-radius: 0px;
+}
+#footer .contact {
+  white-space: pre;
+}
+section.ui.grid:nth-child(even) {
+  position: relative;
+  background: linear-gradient(to top right, #fc0d38, #f55);
+  color: #fff;
+  margin: 250px 0;
+}
+section.ui.grid:nth-child(even)::before {
+  position: absolute;
+  display: block;
+  background: inherit;
+  width: 110%;
+  height: 130%;
+  left: -5%;
+  top: -15%;
+  transform: rotateZ(-3deg);
+  content: '';
+}

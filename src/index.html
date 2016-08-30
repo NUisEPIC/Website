@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link rel="stylesheet" type="text/css" href="bower_components/semantic/dist/semantic.css">
+    <link rel="stylesheet" type="text/css" href="main.css">
+  </head>
+  <body>
+    <div class="ui top fixed menu">
+      <div class="item"><img src="assets/logos/epic.png"></div>
+      <div class="right menu">
+        <div class="ui item">
+          <div id="showSubscribe" class="ui primary button">Subscribe to our newsletter</div>
+        </div>
+      </div>
+    </div>
+
+    <div id="subscribe" class="ui large modal">
+      <center class="aligned header">EPIC Newsletter Subscription</center>
+      <div class="content">
+        <form class="ui form">
+          <label>Name</label>
+          <div class="field">
+            <div class="two fields">
+              <div class="field">
+                <input type="text" name="firstName" placeholder="First Name">
+              </div>
+              <div class="field">
+                <input type="text" name="lastName" placeholder="Last Name">
+              </div>
+            </div>
+          </div>
+          <label>Email Address</label>
+          <div class="field">
+            <div class="field">
+              <input type="email" name="email" placeholder="Email">
+            </div>
+          </div>
+          <label>Which newsletter would you like to subscribe to?</label>
+          <div class="grouped fields">
+            <div class="field">
+              <div class="ui radio checkbox">
+                <input type="radio" name="type" checked="checked">
+                <label>Student</label>
+              </div>
+            </div>
+            <div class="field">
+              <div class="ui radio checkbox">
+                <input type="radio" name="type">
+                <label>Alumni</label>
+              </div>
+            </div>
+          </div>
+          <div class="ui green fluid button">Subscribe!</div>
+        </form>
+      </div>
+    </div>
+
+    <!-- home-->
+    <section class="ui grid">
+      <div class="top aligned row">
+        <div class="centered column"><img src="assets/logos/epic_full.png" class="ui centered large image"></div>
+      </div>
+      <div class="centered row">
+        <div class="ui text container">
+          <div id="typed" style="height: 2em; font-size: 2em;"></div>
+        </div>
+      </div>
+      <div class="centered row">
+        <!-- spacer-->
+        <div class="column two wide"></div>
+        <div class="five wide column">
+          <div class="row">
+            <div class="ui dividing center aligned huge header">Upcoming Events</div>
+          </div>
+          <div class="feed row">
+            <div id="event-feed" class="ui items"></div>
+          </div>
+        </div>
+        <!-- spacer-->
+        <div class="column two wide"></div>
+        <div class="five wide column">
+          <div class="row">
+            <div class="ui dividing center aligned huge header">Recent News</div>
+          </div>
+          <div class="feed row">
+            <div id="blog-feed" class="ui items"></div>
+          </div>
+        </div>
+        <!-- spacer-->
+        <div class="column two wide"></div>
+      </div>
+    </section>
+
+    <!-- about-->
+    <section id="about-us" class="ui grid">
+      <div class="centered row">
+        <div class="column sixteen wide center aligned">
+          <h1>Mission Statement</h1>
+        </div>
+        <div class="pictures left"><img src="assets/images/retreat_circle.jpg"><img src="assets/images/park.jpg"><img src="assets/images/happy_allhands.jpg"></div>
+        <div id="video">
+          <iframe width="560" height="315" frameborder="0" allowfullscreen src="https://www.youtube.com/embed/-MVcuOELEZY"></iframe>
+        </div>
+        <div class="pictures right"><img src="assets/images/hands_linked.jpg"><img src="assets/images/retreat_with_guac.jpg"><img src="assets/images/twister.jpg"></div>
+      </div>
+    </section>
+
+    <!-- teams-->
+    <section class="ui grid">
+      <div class="centered row">
+        <h1>EPIC Teams</h1>
+      </div>
+      <div class="centered row">
+        <div class="spacer column two wide"></div>
+        <div class="column six wide centered">
+          <div id="chart"></div>
+        </div>
+        <div id="team-info" class="left aligned column six wide">Click below to learn more about EPIC's teams.</div>
+        <div class="spacer column two wide"></div>
+      </div>
+    </section>
+
+    <section id="footer" class="ui segment">
+      <div class="ui center aligned container">
+        <div class="ui header">EPIC</div>
+        <p class="contact">
+          The Garage
+          2311 Campus Drive
+          Evanston, IL 60208<br><br><a href="mailto:contact@nuisepic.com"><i class="big red mail square link icon"></i></a><a href="https://www.facebook.com/nuisepic"><i class="big red facebook square link icon"></i></a><a href="https://twitter.com/EPICatNU"><i class="big red twitter square link icon"></i></a><a href="https://www.linkedin.com/company/epic-northwestern"><i class="big red linkedin square link icon"></i></a>
+        </p>
+      </div>
+    </section>
+
+    <script src="bower_components/jquery/dist/jquery.js"></script>
+    <script src="bower_components/semantic/dist/semantic.js"></script>
+    <script src="bower_components/moment/moment.js"></script>
+    <script src="bower_components/typed.js/js/typed.js"></script>
+    <script src="//localhost:2368/shared/ghost-url.min.js"></script>
+    <script src="js/env.js"></script>
+    <script src="js/subscribe.js"></script>
+    <script src="js/teams.js"></script>
+    <script src="js/calendar_feed.js"></script>
+    <script src="js/blog_feed.js"></script>
+    <script src="https://apis.google.com/js/client.js?onload=loadCalendarApi"></script>
+
+    <script>
+      $(function () {
+        $('#typed').typed({
+          strings: [ '', 'Entrepreneurs.', '', 'Pioneers.', '', 'Innovators.', '', 'Creators.' ],
+          typeSpeed: 50,
+          loop: true,
+          showCursor: false
+        })
+      })
+
+    </script>
+  </body>
+</html>
