@@ -8,13 +8,13 @@ var SCOPES = ["https://www.googleapis.com/auth/calendar.readonly"];
  * Check if current user has authorized this application.
  */
 function checkAuth() {
-
   gapi.auth.authorize(
     {
       'client_id': CLIENT_ID,
       'scope': SCOPES.join(' '),
       'immediate': true
-    }, handleAuthResult);
+    }, handleAuthResult
+  );
 }
 
 /**
