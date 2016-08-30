@@ -6,7 +6,7 @@ gulp.task('jade', function () {
   gulp.src('src/jade/index.jade')
     .pipe($.jade())
     .pipe(gulp.dest('.tmp'))
-    .pipe(bs.reload({ stream: true }))
+    .pipe(bs.reload())
 })
 
 gulp.task('stylus', function () {
@@ -22,20 +22,22 @@ gulp.task('js', function () {
 })
 
 gulp.task('watch', function () {
-  gulp.watch('src/jade/**/*.jade', ['jade'])
-  gulp.watch('src/stylus/**/*.styl', ['stylus'])
-  gulp.watch('src/js/**/*.js', ['js'])
+  // gulp.watch('src/jade/**/*.jade', ['jade'])
+  // gulp.watch('src/stylus/**/*.styl', ['stylus'])
+  // gulp.watch('src/js/**/*.js', ['js'])
+  gulp.watch('src/index.html').on('change', function () {
+    bs.reload()
+  })
+  gulp.watch('src/main.css').on('change', function () {
+    bs.reload()
+  })
 })
 
-gulp.task('serve', ['stylus', 'jade', 'js'], function () {
+gulp.task('serve', function () {
   bs.init({
     port: 8000,
     server: {
-      baseDir: './.tmp',
-      routes: {
-        '/bower_components': 'src/bower_components',
-        '/assets': 'src/assets'
-      }
+      baseDir: './src'
     }
   })
 })
