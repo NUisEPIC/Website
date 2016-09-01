@@ -1,8 +1,10 @@
-$(document).ready(function() {
-  $('#subscribe').modal();         // Initialize modal
+(function subscribe($) {
+    $(function activate() {
+        $('#subscribe-modal').modal();         // Initialize modal
 
-  $('#showSubscribe')              // Show modal on click
-    .click(function() {
-      $('#subscribe').modal('show');
+        $('#show-subscribe-button').click(function() { // Show modal on click
+            $('#subscribe-modal').modal('show');
+        });
     });
-});
+}($));
+
