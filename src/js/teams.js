@@ -1,45 +1,11 @@
 (function($, Snap) {
     $(function() {
         var snap = Snap(500, 500);
-
-//var chartData = [{
-  //team: "WildHacks",
-  //size: 14.28,
-  //blurb: "Wildhacks plans and executes a hackathon... Check out their website at:",
-  //color: "#33c0cd"
-//}, {
-  //team: "Sprout",
-  //size: 14.28,
-  //blurb: "Sprout is a preorientation program...",
-  //color: "#c15c65"
-//}, {
-  //team: "Tech",
-  //size: 14.28,
-  //blurb: "Tech codes things (like this website!)... Check out our github at:",
-  //color: "#fac440"
-//}, {
-  //team: "NUVC",
-  //size: 14.28,
-  //blurb: "NUVC plans and executes a startup pitch competition... Check out their website at:",
-  //color: "#a4e8de"
-//},
-//{
-  //team: "Launch",
-  //size: 14.28,
-  //blurb: "Launch teaches students...",
-  //color: "#b31b28"
-//},
-//{
-  //team: "Branding",
-  //size: 14.28,
-  //blurb: "Branding brands EPIC and provides content...",
-  //color: "#fbe5af"
-//}]
-        var data = [
+        var teams = [
             {
                 name: 'Wildhacks',
                 attr: {
-                    id: '#wildhacks-slice',
+                    id: 'wildhacks-slice',
                     stroke: '#f1f1f1',
                     fill: '#f1f1f1',
                     fillOpacity: 0.5,
@@ -49,7 +15,7 @@
             {
                 name: 'Tech',
                 attr: {
-                    id: '#tech-slice',
+                    id: 'tech-slice',
                     stroke: '#123123',
                     fill: '#123123',
                     fillOpacity: 0.5,
@@ -59,7 +25,7 @@
             {
                 name: 'NUVC',
                 attr: {
-                    id: '#nuvc-slice',
+                    id: 'nuvc-slice',
                     stroke: '#3da08d',
                     fill: '#3da08d',
                     fillOpacity: 0.5,
@@ -67,32 +33,76 @@
                 }
             }
         ];
-        var sector = drawTeamChart(snap, {x:100, y:100}, 50, 95, data);
+        var sector = drawTeamChart(snap, {x:100, y:100}, 50, 95, teams);
     });
     
-    function drawTeamChart(snap, center, rIn, rOut, data) {
-        var delta = 360/data.length;
-        for (var i = 0; i < data.length; i++) {
-            drawPieSlice(snap, center, rIn, rOut, i * delta, delta, data[i].attr);
-        }
+    function radiansToDegrees(rad) {
+        return 360 * rad/(2*Math.PI);
     }
 
-    function drawPieSlice(snap, center, rIn, rOut, startDeg, delta, attr) {
+    function drawTeamChart(snap, center, rIn, rOut, teams) {
+        var delta = 2*Math.PI / teams.length;
+        teams.forEach(function(team, i) {
+            drawTeamSlice(snap, center, rIn, rOut, i * delta, delta, team);
+
+            function hoverIn() {
+                snap.select('#'+team.attr.id)
+                    .animate({
+                        transform: 't' + 10*Math.cos(i*delta + delta/2) + ' ' + 10*Math.sin(i*delta + delta/2)
+                    }, 500, mina.linear);
+            }
+            function hoverOut() {
+                snap.select('#'+team.attr.id)
+                    .animate({
+                        transform: 't0 0'
+                    }, 500, mina.linear);
+            }
+            $('#'+team.attr.id).hover(hoverIn, hoverOut);
+        })
+    }
+
+    function drawTeamSlice(snap, center, rIn, rOut, theta, delta, team) {
+        var slice = drawPieSlice(snap, center, rIn, rOut, theta, delta, team.attr);
+
+        var rotation = (90 + radiansToDegrees(theta + delta/2)) % 360;
+        var rMid = (rIn + rOut)/2;
+        var startMid = {
+            x: center.x + rMid * Math.cos(theta),
+            y: center.y + rMid * Math.sin(theta)
+        };
+        var endMid = {
+            x: center.x + rMid * Math.cos(theta + delta),
+            y: center.y + rMid * Math.sin(theta + delta)
+        };
+        var x = center.x + Math.cos(theta + delta/2) * rMid
+        var y = center.y + Math.sin(theta + delta/2) * rMid
+        console.log('angle: ' + (theta + delta/2))
+        console.log('x: ' + x)
+        console.log('y: ' + y)
+        
+        var textPath = 'M' + startMid.x + ' ' + startMid.y + ' A ' + rMid + ' ' + rMid + ' ' + 0 + ' ' + 0 + ' ' + 1 + ' ' + endMid.x + ' ' + endMid.y
+
+        var label = snap.text(startMid.x, startMid.y, 'Wildhacks')
+        label.attr({'textpath': textPath, 'text-anchor': 'middle'})
+        console.log(rotation);
+    }
+
+    function drawPieSlice(snap, center, rIn, rOut, theta, delta, attr) {
         var startOut = {
-            x: center.x + rOut * Math.cos(Math.PI*(startDeg)/180),
-            y: center.y + rOut * Math.sin(Math.PI*(startDeg)/180)
+            x: center.x + rOut * Math.cos(theta),
+            y: center.y + rOut * Math.sin(theta)
         };
         var endOut = {
-            x: center.x + rOut * Math.cos(Math.PI*(startDeg + delta)/180),
-            y: center.y + rOut * Math.sin(Math.PI*(startDeg + delta)/180)
+            x: center.x + rOut * Math.cos(theta + delta),
+            y: center.y + rOut * Math.sin(theta + delta)
         };
         var startIn = {
-            x: center.x + rIn * Math.cos(Math.PI*(startDeg + delta)/180),
-            y: center.y + rIn * Math.sin(Math.PI*(startDeg + delta)/180)
+            x: center.x + rIn * Math.cos(theta + delta),
+            y: center.y + rIn * Math.sin(theta + delta)
         };
         var endIn = {
-            x: center.x + rIn * Math.cos(Math.PI*(startDeg)/180),
-            y: center.y + rIn * Math.sin(Math.PI*(startDeg)/180)
+            x: center.x + rIn * Math.cos(theta),
+            y: center.y + rIn * Math.sin(theta)
         };
         var largeArc = delta > 180 ? 1 : 0;
         var path = "M" + startOut.x + " " + startOut.y +
@@ -102,7 +112,7 @@
             "A" + rIn + " " + rIn + " 0 " +
             largeArc + " 0 " + endIn.x + " " + endIn.y +
             "L" + startOut.x + " " + startOut.y + "Z";
-        
+       
         var path = snap.path(path);
         path.attr(attr);
         
