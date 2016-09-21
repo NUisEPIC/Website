@@ -55,29 +55,12 @@ section.ui.grid {
   top: 0;
   width: 225px;
 }
-#about-us .pictures.left {
-  left: 20px;
+#about-us .video{
+  padding-left: 30px;
+  padding-right: 30px;
 }
-#about-us .pictures.left img:nth-child(odd) {
-  left: 50px;
-}
-#about-us .pictures.right {
-  right: 20px;
-}
-#about-us .pictures.right img:nth-child(odd) {
-  right: 50px;
-}
-#about-us .pictures img {
-  margin: 20px 0;
-  height: 150px;
-  border: 5px solid #fff;
-  position: relative;
-}
-#about-us .pictures img:nth-child(even) {
-  transform: rotateZ(2deg);
-}
-#about-us .pictures img:nth-child(odd) {
-  transform: rotateZ(-2deg);
+#about-us-text{
+  width: 400px;
 }
 @media screen and (max-width: 1000px) {
   #about-us .pictures img {
