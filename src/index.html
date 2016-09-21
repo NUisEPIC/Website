@@ -93,15 +93,14 @@
 
     <!-- about-->
     <section id="about-us" class="ui grid">
-      <div class="centered row">
+      <div class="left row">
         <div class="column sixteen wide center aligned">
           <h1>Mission Statement</h1>
         </div>
-        <div class="pictures left"><img src="assets/images/retreat_circle.jpg"><img src="assets/images/park.jpg"><img src="assets/images/happy_allhands.jpg"></div>
         <div id="video">
           <iframe width="560" height="315" frameborder="0" allowfullscreen src="https://www.youtube.com/embed/-MVcuOELEZY"></iframe>
         </div>
-        <div class="pictures right"><img src="assets/images/hands_linked.jpg"><img src="assets/images/retreat_with_guac.jpg"><img src="assets/images/twister.jpg"></div>
+        <div>Text</div>
       </div>
     </section>
 
@@ -110,14 +109,25 @@
       <div class="centered row">
         <h1>EPIC Teams</h1>
       </div>
-      <div class="centered row">
-        <div class="spacer column two wide"></div>
-        <div class="column six wide centered">
-          <div id="chart"></div>
+      <div id="team-page">
+    <p id="team-info">Click a button</p>
+    <div id="team-icon-wrapper">
+        <div class = "circle" id="circle1" onclick="myFunction('WildHacks is an annual student-run intercollegiate hackathon that brings together 500+ student hackers and industry professionals for 36 hours of hacking, learning, and collaboration, sprinkled with inspiring talks and just-for-fun activities.')">WildHacks</div>
+
+        <div class = "circle" id="circle2" onclick="myFunction('HackNorthwestern, Women in Computing, and IEEE partner to bring you weekly hack nights every quarter. Join them every Wednesday from 7-10pm in the Garage – bring your laptop and we will take care of the food and awesome tutorials. Meet fellow hackers, work on cool projects, and pick up new skills. All backgrounds and experience levels are welcome!')">Hack NU</div>
+
+        <div class = "circle" id="circle3" onclick="myFunction('Launch teaches entrepreneurial thinking and applicable skills, using startups as learning vehicles. Launch mentors students from ideation to iteration to creation of the final product.')">Launch</div>
+
+        <div class = "circle" id="circle4" onclick="myFunction('The business development team maintains and builds EPIC’s professional network, engaging with alums, companies, and entrepreneurs, as well as manage EPIC’s finances. The team is in charge of programs such as alumni Starter Dinners and the Startup Career Fair, and also attends various events to build EPIC's network. Through external expansion, we are able to facilitate internal growth for the organization.')">Biz Dev</div>
+
+        <div class = "circle" id="circle5" onclick="myFunction(5)">Sprout</div>
+        <div class = "circle" id="center-circle">
+          <div onclick="myFunction('Tech creates all digital platforms used by EPIC, such as this website, our blog, and our online application. The team additionally manages any back-end work, teaches members how to create software that is beautiful on the inside and out, and comes up with innovative projects that support EPIC’s mission.')">tech</div>
+          <div onclick="myFunction('Branding is home to some of the best creative minds of EPIC – everything EPIC that you see about , from every carefully conceptualized logo to the look and feel of all content created by EPIC. This creative powerhouse  shapes EPIC’s brand into something approachable, empowering, and inspiring, to  everyone within the NU community and beyond.')">branding</div>
         </div>
-        <div id="team-info" class="left aligned column six wide">Click below to learn more about EPIC's teams.</div>
-        <div class="spacer column two wide"></div>
-      </div>
+    </div>
+    </div>
+    <div id = "general-membership-wrapper">General membership is an opportunity for students  to try out entrepreneurship in an open and supportive environment. They can engage with other student entrepreneurs, listen to kick ass speakers, and take advantage of EPIC’s network.</div>
     </section>
 
     <section id="footer" class="ui segment">
@@ -141,6 +151,7 @@
     <script src="js/teams.js"></script>
     <script src="js/calendar_feed.js"></script>
     <script src="js/blog_feed.js"></script>
+    <script src="js/team.js"></script>
     <script src="https://apis.google.com/js/client.js?onload=loadCalendarApi"></script>
 
     <script>

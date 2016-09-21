@@ -108,3 +108,75 @@ section.ui.grid:nth-child(even)::before {
   transform: rotateZ(-3deg);
   content: '';
 }
+
+#team-icon-wrapper{
+  margin: 0 auto;
+  position: relative;
+  width: 500px;
+  height: 500px;
+}
+
+.circle{
+  top: 225px;
+  left: 225px;
+  width: 50px;
+    height: 50px;
+    -webkit-border-radius: 25px;
+    -moz-border-radius: 25px;
+    border-radius: 25px;
+    position: absolute;
+    transform-origin: 50% 50%;
+}
+
+#circle1 {
+    background: blue;
+    transform: rotate(0deg) translateY(-225px);
+}
+
+#circle2 {
+    background: green;
+    transform: rotate(72deg) translateY(-225px);
+}
+#circle3 {
+    background: purple;
+    transform: rotate(144deg) translateY(-225px);
+}
+#circle4 {
+    background: cyan;
+    transform: rotate(216deg) translateY(-225px);
+}
+#circle5 {
+    background: pink;
+    transform: rotate(288deg) translateY(-225px);
+}
+#center-circle {
+  top: 210px;
+  left: 210px;
+  width: 80px;
+  height: 80px;
+  -webkit-border-radius: 40px;
+  -moz-border-radius: 40px;
+  border-radius: 40px;
+  background: red;
+}
+
+#general-membership-wrapper{
+  padding: 0px 10px 40px 10px;
+}
+
+@media screen and (min-width: 800px) {
+    #team-info {
+      float: right;
+      width: calc(100% - 500px);
+    }
+    #team-icon-wrapper{
+      float: left;
+    }
+    #team-page{
+      max-width: 1200px;
+
+    }
+}
+
+
+
