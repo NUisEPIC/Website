@@ -1,11 +1,14 @@
 body {
   margin-top: 40px;
 }
+
 section.ui.grid {
   margin: 0;
   width: 100%;
   min-height: 600px;
+  padding-top: 60px;
 }
+
 .feed {
   padding: 10px 50px;
   max-height: 400px;
@@ -40,6 +43,7 @@ section.ui.grid {
   width: 100px;
   max-height: 100px;
 }
+
 #chart {
   height: 600px;
 }
@@ -76,7 +80,7 @@ section.ui.grid {
 }
 section.ui.grid:nth-child(even) {
   position: relative;
-  background: linear-gradient(to top right, #fc0d38, #f55);
+  background: linear-gradient(to top right, #f55, rgb(219, 40, 40));
   color: #fff;
   margin: 250px 0;
 }
