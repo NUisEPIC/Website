@@ -43,16 +43,16 @@
     function drawTeamChart(snap, center, rIn, rOut, teams) {
         var delta = 2*Math.PI / teams.length;
         teams.forEach(function(team, i) {
-            drawTeamSlice(snap, center, rIn, rOut, i * delta, delta, team);
+            var teamSlice = drawTeamSlice(snap, center, rIn, rOut, i * delta, delta, team);
 
             function hoverIn() {
-                snap.select('#'+team.attr.id)
+                teamSlice
                     .animate({
                         transform: 't' + 10*Math.cos(i*delta + delta/2) + ' ' + 10*Math.sin(i*delta + delta/2)
                     }, 500, mina.linear);
             }
             function hoverOut() {
-                snap.select('#'+team.attr.id)
+                teamSlice
                     .animate({
                         transform: 't0 0'
                     }, 500, mina.linear);
@@ -64,7 +64,6 @@
     function drawTeamSlice(snap, center, rIn, rOut, theta, delta, team) {
         var slice = drawPieSlice(snap, center, rIn, rOut, theta, delta, team.attr);
 
-        var rotation = (90 + radiansToDegrees(theta + delta/2)) % 360;
         var rMid = (rIn + rOut)/2;
         var startMid = {
             x: center.x + rMid * Math.cos(theta),
@@ -74,17 +73,22 @@
             x: center.x + rMid * Math.cos(theta + delta),
             y: center.y + rMid * Math.sin(theta + delta)
         };
-        var x = center.x + Math.cos(theta + delta/2) * rMid
-        var y = center.y + Math.sin(theta + delta/2) * rMid
-        console.log('angle: ' + (theta + delta/2))
-        console.log('x: ' + x)
-        console.log('y: ' + y)
-        
-        var textPath = 'M' + startMid.x + ' ' + startMid.y + ' A ' + rMid + ' ' + rMid + ' ' + 0 + ' ' + 0 + ' ' + 1 + ' ' + endMid.x + ' ' + endMid.y
+        var textAnchor = {
+            x: center.x + rMid * Math.cos(theta + delta/2),
+            y: center.y + rMid * Math.sin(theta + delta/2)
+        };
 
-        var label = snap.text(startMid.x, startMid.y, 'Wildhacks')
-        label.attr({'textpath': textPath, 'text-anchor': 'middle'})
-        console.log(rotation);
+        var x = center.x + rMid * Math.cos(theta + delta/2);
+        var y = center.y + rMid * Math.sin(theta + delta/2);
+        
+        snap.circle(textAnchor.x, textAnchor.y, 2);
+        var largeArc = delta > 180 ? 1 : 0;
+        var textPath = 'M' + startMid.x + ' ' + startMid.y + ' A' + rMid + ' ' + rMid + ' ' + 0 + ' ' + largeArc + ' ' + 1 + ' ' + endMid.x + ' ' + endMid.y
+
+        var label = snap.text(startMid.x, startMid.y, team.name);
+        label.attr({'textpath': textPath, 'text-anchor': 'middle'});
+
+        return snap.group(slice, label);
     }
 
     function drawPieSlice(snap, center, rIn, rOut, theta, delta, attr) {
