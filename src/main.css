@@ -76,7 +76,7 @@ section.ui.grid {
   border-radius: 0px;
 }
 #footer .contact {
-  white-space: pre;
+  text-align: center;
 }
 section.ui.grid:nth-child(even) {
   position: relative;
