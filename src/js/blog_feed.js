@@ -14,6 +14,7 @@ function onSuccess(data) {
 
           var title = description.appendChild(document.createElement('a'));
           $(title).attr('href', 'http://localhost:2368' + post.url)
+          $(title).attr('target', '_blank')
           title.appendChild(document.createTextNode(post.title)); $(title).addClass('header');
 
           var time = description.appendChild(document.createElement('div'));
