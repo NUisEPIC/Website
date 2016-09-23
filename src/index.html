@@ -12,15 +12,15 @@
             <a href="#teams" class="item">Teams</a>
             <div class="right menu">
                 <div class="ui item">
-                    <div id="showSubscribe" class="ui custom-red button">Subscribe to our newsletter</div>
+                    <div id="show-subscribe" class="ui primary button">Subscribe to our newsletter</div>
                 </div>
             </div>
         </div>
 
-        <div id="subscribe" class="ui large modal">
+        <div id="subscribe-modal" class="ui large modal">
             <center class="aligned header">EPIC Newsletter Subscription</center>
             <div class="content">
-                <form class="ui form">
+                <form class="ui form" id="subscribe-form">
                     <label>Name</label>
                     <div class="field">
                         <div class="two fields">
@@ -42,13 +42,13 @@
                     <div class="grouped fields">
                         <div class="field">
                             <div class="ui radio checkbox">
-                                <input type="radio" name="type" checked="checked">
+                                <input type="radio" name="type" checked="checked" value="student">
                                 <label>Student</label>
                             </div>
                         </div>
                         <div class="field">
                             <div class="ui radio checkbox">
-                                <input type="radio" name="type">
+                                <input type="radio" name="type" value="alumni">
                                 <label>Alumni</label>
                             </div>
                         </div>
@@ -317,7 +317,7 @@
         <div class="ui input">
           <input type="text" placeholder="Email">
         </div>
-          <button class="ui button" id = "general-member-button">Become a General Member</button>
+          <button class="ui button" id="general-member-button">Become a General Member</button>
       </div>
     
     </section>
