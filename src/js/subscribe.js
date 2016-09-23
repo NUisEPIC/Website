@@ -29,10 +29,15 @@ $(document).ready(function() {
             dataType: 'json',
             data: getFormData($(this)),
             success: function() {
-                console.log('success')
+                console.log('ss')
+                $('#general-member-input').removeClass('error');
+                $('#general-member-input').addClass('success');
+                $('#general-member-input').form('clear')
             },
             error: function() {
-                console.log('error')
+                console.log('ee')
+                $('#general-member-input').removeClass('success');
+                $('#general-member-input').addClass('error');
             }
         });
     });
