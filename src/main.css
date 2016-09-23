@@ -60,8 +60,12 @@ section.ui.grid {
   height: 600px;
 }
 #team-info {
-  margin: 200px 0;
+  margin: 150px 0;
   height: 200px;
+}
+#team-page{
+  padding-top: 0px;
+  height: 450px;
 }
 #about-us {
   position: relative;
@@ -107,65 +111,92 @@ section.ui.grid:nth-child(even)::before {
   transform: rotateZ(-3deg);
   content: '';
 }
-
+.logo-image{
+  height: 100px;
+  width: 100px;
+}
 #team-icon-wrapper{
   margin: 0 auto;
   position: relative;
-  width: 500px;
-  height: 500px;
+  width: 400px;
+  height: 400px;
+}
+#general-member-input{
+  margin: 0 auto;
+  padding-bottom: 40px;
+}
+#general-member-button{
+  background-color: rgb(219, 40, 40);
+  border: 0px;
+  border-radius: 8px;
+  color: white;
 }
 
 .circle{
-  top: 225px;
+  top: 150px;
   left: 225px;
-  width: 50px;
-    height: 50px;
-    -webkit-border-radius: 25px;
-    -moz-border-radius: 25px;
-    border-radius: 25px;
-    position: absolute;
-    transform-origin: 50% 50%;
+  width: 100px;
+  height: 100px;
+  position: absolute;
+  transform-origin: 50% 50%;
 }
 
 #circle1 {
-    background: blue;
-    transform: rotate(0deg) translateY(-225px);
+    transform: rotate(0deg) translateY(-150px);
 }
-
 #circle2 {
-    background: green;
-    transform: rotate(72deg) translateY(-225px);
+    transform: rotate(90deg) translateY(-150px);
+}
+#circle2 * {
+  transform: rotate(-90deg);
+}
+#circle2 p {
+  transform-origin: top left;
+  text-align: center;
+  position: relative;
+  left: 80px;
 }
 #circle3 {
-    background: purple;
-    transform: rotate(144deg) translateY(-225px);
+    transform: rotate(180deg) translateY(-150px);
+}
+#circle3 * {
+  transform: rotate(-180deg);
+}
+#circle1 p {
+  text-align: center;
+}
+#circle3 p {
+  text-align: center;
 }
 #circle4 {
-    background: cyan;
-    transform: rotate(216deg) translateY(-225px);
+    transform: rotate(270deg) translateY(-150px);
+}
+#circle4 * {
+  transform: rotate(-270deg);
 }
 #circle5 {
-    background: pink;
-    transform: rotate(288deg) translateY(-225px);
+    transform: rotate(288deg) translateY(-150px);
+}
+#circle5 * {
+  transform: rotate(-288deg);
 }
 #center-circle {
-  top: 210px;
-  left: 210px;
+  top: 150px;
+  left: 235px;
   width: 80px;
   height: 80px;
-  -webkit-border-radius: 40px;
-  -moz-border-radius: 40px;
-  border-radius: 40px;
-  background: red;
+  background: url("assets/images/epic.png");
+  background-size: contain;
 }
 
 #general-membership-wrapper{
-  padding: 0px 10px 40px 10px;
+  padding: 0px 10px 30px 10px;
 }
 
 @media screen and (min-width: 800px) {
     #team-info {
       float: right;
+      padding-left: 60px;
       width: calc(100% - 500px);
     }
     #team-icon-wrapper{
