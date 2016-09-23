@@ -16,9 +16,8 @@ $(document).ready(function() {
             success: function() {
                 $('#subscribe-modal').modal('hide')
             },
-            error: function(req, status, err) {
-                console.log('ss')
-            console.log( 'something went wrong', status, err  );
+            error: function() {
+                $('#subscribe-modal').modal('hide')
             }
         })
     });
