@@ -10,12 +10,27 @@
 body {
   margin-top: 40px;
 }
+#general-member-button:hover {
+    background-color: #fc0d38;
+    color: white;
+}
+.ui.primary.button {
+    background-color: red;
+}
 
 section.ui.grid {
   margin: 0;
   width: 100%;
   min-height: 600px;
   padding-top: 60px;
+}
+.ui.button.custom-red{
+  background-color: #eb2e3b;
+  color: white;
+}
+.ui.button.custom-red:hover{
+  background-color: #fc0d38;
+  color: white;
 }
 
 .feed {
@@ -37,7 +52,7 @@ section.ui.grid {
 }
 .calendar > .month {
   height: 28px;
-  background-color: #f00;
+  background-color: #FC0D38;
   color: #fff;
 }
 .calendar > .date {
@@ -56,30 +71,26 @@ section.ui.grid {
   background-size: contain;
 }
 
+
 #chart {
   height: 600px;
-}
-#team-info {
-  margin: 150px 0;
-  height: 200px;
-}
-#team-page{
-  padding-top: 0px;
-  height: 450px;
 }
 #about-us {
   position: relative;
 }
 #about-us .pictures {
   position: absolute;
+  display: block;
   top: 0;
   width: 225px;
 }
 #about-us .video{
+  display: block;
   padding-left: 30px;
   padding-right: 30px;
 }
 #about-us-text{
+  text-align: left;
   width: 400px;
 }
 @media screen and (max-width: 1000px) {
@@ -96,7 +107,7 @@ section.ui.grid {
 }
 section.ui.grid:nth-child(even) {
   position: relative;
-  background: linear-gradient(to top right, #f55, rgb(219, 40, 40));
+  background: linear-gradient(to top right, #ed2d39, rgb(219, 40, 40));
   color: #fff;
   margin: 250px 0;
 }
@@ -115,37 +126,62 @@ section.ui.grid:nth-child(even)::before {
   height: 100px;
   width: 100px;
 }
-#team-icon-wrapper{
-  margin: 0 auto;
-  position: relative;
-  width: 400px;
-  height: 400px;
-}
 #general-member-input{
   margin: 0 auto;
   padding-bottom: 40px;
 }
 #general-member-button{
-  background-color: rgb(219, 40, 40);
+  background-color: #eb2e3b;
   border: 0px;
   border-radius: 8px;
   color: white;
 }
+.custom-colors{
+  color: #eb2e3b;
+}
+.custom-colors:hover {
+    color: #fc0d38;
+}
+
+#team-info {
+  margin: 150px 0;
+  float: left;
+}
+
+#team-page{
+  padding-top: 0px;
+  width: 100%;
+}
+
+#team-icon-wrapper{
+  margin: 0 auto;
+  position: relative;
+  width: 400px;
+  height: 400px;
+  float: left;
+}
 
 .circle{
   top: 150px;
-  left: 225px;
+  left: 150px;
   width: 100px;
   height: 100px;
   position: absolute;
   transform-origin: 50% 50%;
 }
 
+iframe{
+  width:560px;
+  height:315px;
+}
+
 #circle1 {
-    transform: rotate(0deg) translateY(-150px);
+  transform: rotate(0deg) translateY(-150px);
+  cursor:pointer;
 }
 #circle2 {
-    transform: rotate(90deg) translateY(-150px);
+  transform: rotate(90deg) translateY(-150px);
+  cursor:pointer;
 }
 #circle2 * {
   transform: rotate(-90deg);
@@ -157,7 +193,8 @@ section.ui.grid:nth-child(even)::before {
   left: 80px;
 }
 #circle3 {
-    transform: rotate(180deg) translateY(-150px);
+  transform: rotate(180deg) translateY(-150px);
+  cursor:pointer;
 }
 #circle3 * {
   transform: rotate(-180deg);
@@ -169,44 +206,76 @@ section.ui.grid:nth-child(even)::before {
   text-align: center;
 }
 #circle4 {
-    transform: rotate(270deg) translateY(-150px);
+  transform: rotate(270deg) translateY(-150px);
+  cursor:pointer;
 }
 #circle4 * {
   transform: rotate(-270deg);
 }
 #circle5 {
-    transform: rotate(288deg) translateY(-150px);
+  transform: rotate(288deg) translateY(-150px);
+  cursor:pointer;
 }
 #circle5 * {
   transform: rotate(-288deg);
 }
 #center-circle {
   top: 150px;
-  left: 235px;
+  left: 160px;
   width: 80px;
   height: 80px;
   background: url("assets/images/epic.png");
   background-size: contain;
 }
+.ui button{
+  color: red;
+}
 
 #general-membership-wrapper{
-  padding: 0px 10px 30px 10px;
+  padding: 10px 10px 30px 10px;
+}
+#general-membership-wrapper h2{
+  text-align: center;
+  margin: 15px 0px 8px 0px;
 }
 
 @media screen and (min-width: 800px) {
     #team-info {
-      float: right;
       padding-left: 60px;
-      width: calc(100% - 500px);
-    }
-    #team-icon-wrapper{
-      float: left;
+      width: calc(100% - 400px);
     }
     #team-page{
-      max-width: 1200px;
-
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+}
+@media all and (max-width: 766px) {
+    .feed {
+      padding: 0px;
+    }
+    .ui.items > .item > .image.thumbnail{
+      width: 300px !important;
+    }
+    #team-info {
+      margin: 50px 0;
+    }
+    #team-icon-wrapper {
+      float: none;
+      margin: 0 auto;
     }
 }
 
-
-
+@media screen and (max-width: 1040px) {
+  #about-us .video{
+    display: block;
+    width:100%;
+  }
+  #about-us-text{
+    display: block;
+    width: 100%;
+  }
+  iframe {
+    width:400px; 
+    height:315px;
+  }
+}
