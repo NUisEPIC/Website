@@ -12,7 +12,7 @@
             <a href="#teams" class="item">Teams</a>
             <div class="right menu">
                 <div class="ui item">
-                    <div id="show-subscribe" class="ui primary button">Subscribe to our newsletter</div>
+                    <div id="show-subscribe" class="ui custom-red button">Subscribe to our newsletter</div>
                 </div>
             </div>
         </div>
@@ -53,7 +53,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="ui custom-red fluid button">Subscribe!</div>
+                    <button class="ui custom-red fluid button" id="subscribe-button">Subscribe!</button>
                 </form>
             </div>
         </div>
@@ -269,58 +269,41 @@
                     <iframe frameborder="0" allowfullscreen src="https://www.youtube.com/embed/-MVcuOELEZY"></iframe>
                 </div>
                 <div class="column seven wide center" id="about-us-text">
-                EPIC is Northwestern's undergraduate student-run entrepreneurship organization. Ultimately, we envision EPIC to foster a community where all students can be entrepreneurs. We work towards this goal by creating events and opportunities such as Wildhacks (our annual 24-hour hackathon), Northwestern University Venture Challenge (our pitch competition with prize money that is up to $200,000), and Launch (our in-house student year-long accelerator).
+                    EPIC is Northwestern's undergraduate student-run entrepreneurship organization. Ultimately, we envision EPIC to foster a community where all students can be entrepreneurs. We work towards this goal by creating events and opportunities such as
+                    Wildhacks (our annual 24-hour hackathon), Northwestern University Venture Challenge (our pitch competition with prize money that is up to $200,000), and Launch (our in-house student year-long accelerator).
                 </div>
-             </div>
+            </div>
         </section>
-    <!-- teams-->
-    <section class="ui grid" id="teams">
-      <div class="centered row">
-        <h1>EPIC Teams</h1>
-      </div>
-      <div id="team-page">
-    <div id="team-icon-wrapper">
-        <div class = "circle" id="circle1" onclick="myFunction('WildHacks is an annual student-run intercollegiate hackathon that brings together 500+ student hackers and industry professionals for 36 hours of hacking, learning, and collaboration, sprinkled with inspiring talks and just-for-fun activities.')">
-        <img src="assets/images/wildhacks.png" alt="hack northwestern logo"class="logo-image">
-        <p>WildHacks</p></div>
+        <!-- teams-->
+        <section class="ui grid" id="teams">
+            <div class="centered row">
+                <h1>EPIC Teams</h1>
+            </div>
+            <div class="row">
+                <div class="center aligned eight wide column">
+                    <svg id="team-diagram"></svg>
+                </div>
+                <div class="middle aligned eight wide column">
+                    <div id="team-description"></div>
+                </div>
+            </div>
+            <div class="ui centered row" id="general-membership-wrapper">
+                <div class="column ten wide">
+                    <h2>General Membership</h2>
+                    General membership is an opportunity for students to try out entrepreneurship in an open and supportive environment. They can engage with other student entrepreneurs, listen to kick ass speakers, and take advantage of EPIC’s network. Write your email
+                    below and become a general member today!
+                </div>
+            </div>
+            <br>
+            <form id="general-member-input">
+                <div class="ui input">
+                    <input type="text" placeholder="Email">
+                </div>
+                <input type="text" value="general" hidden />
+                <button class="ui custom-red button" type="submit" id="general-subscribe">Become a General Member</button>
+            </form>
 
-        <div class = "circle" id="circle2" onclick="myFunction('HackNorthwestern, Women in Computing, and IEEE partner to bring you weekly hack nights every quarter. Join them every Wednesday from 7-10pm in the Garage – bring your laptop and we will take care of the food and awesome tutorials. Meet fellow hackers, work on cool projects, and pick up new skills. All backgrounds and experience levels are welcome!')">
-        <img src="assets/images/hacknu.png" alt="hack northwestern logo"class="logo-image">
-        <p>Hack NU</p></div>
-
-        <div class = "circle" id="circle3" onclick="myFunction('Launch teaches entrepreneurial thinking and applicable skills, using startups as learning vehicles. Launch mentors students from ideation to iteration to creation of the final product.')">
-        <img src="assets/images/launch.png" alt="hack northwestern logo"class="logo-image">
-        <p>Launch</p></div>
-        <!--
-        <div class = "circle" id="circle4" onclick="myFunction('The business development team maintains and builds EPIC’s professional network, engaging with alums, companies, and entrepreneurs, as well as manage EPIC’s finances. The team is in charge of programs such as alumni Starter Dinners and the Startup Career Fair, and also attends various events to build EPIC's network. Through external expansion, we are able to facilitate internal growth for the organization.')">
-        <img src="assets/images/hacknu.png" alt="hack northwestern logo"class="logo-image">
-        <p>Biz Dev</p></div>
-        -->
-        <div class = "circle" id="circle4" onclick="myFunction('Sprout is a 3-day program that provides incoming Wildcats with the opportunity to discover their inner entrepreneur through specially designed activities and workshops, participants develop problem solving, teamwork, and brainstorming skills. Students will also have the opportunity to hear from and speak with real-world entrepreneurs from the Chicago venture start-up scene. Sprout empowers young innovative minds by teaching them the spirit of entrepreneurship and helping them take the first steps towards turning ideas into reality.')">
-        <img src="assets/images/sprout.png" alt="hack northwestern logo"class="logo-image">
-        <p>Sprout</p></div>
-        <div class = "circle" id="center-circle">
-          <div onclick="myFunction('Tech creates all digital platforms used by EPIC, such as this website, our blog, and our online application. The team additionally manages any back-end work, teaches members how to create software that is beautiful on the inside and out, and comes up with innovative projects that support EPIC’s mission.')"></div>
-          <div onclick="myFunction('Branding is home to some of the best creative minds of EPIC – everything EPIC that you see about , from every carefully conceptualized logo to the look and feel of all content created by EPIC. This creative powerhouse  shapes EPIC’s brand into something approachable, empowering, and inspiring, to  everyone within the NU community and beyond.')"></div>
-        </div>
-    </div>
-    <div id="team-info"> <- check out our teams</div>
-    </div>
-    <div class="ui centered row" id = "general-membership-wrapper">
-      <div class="column ten wide">
-        <h2>General Membership</h2>
-        General membership is an opportunity for students  to try out entrepreneurship in an open and supportive environment. They can engage with other student entrepreneurs, listen to kick ass speakers, and take advantage of EPIC’s network. Write your email below and become a general member today!
-      </div>
-      </div>
-        <br>
-      <div id="general-member-input">
-        <div class="ui input">
-          <input type="text" placeholder="Email">
-        </div>
-          <button class="ui button" id="general-member-button">Become a General Member</button>
-      </div>
-    
-    </section>
+        </section>
 
         <section id="footer" class="ui segment">
             <div class="ui grid">
@@ -366,7 +349,8 @@
         <script src="bower_components/markdown/lib/markdown.js"></script>
         <script src="js/env.js"></script>
         <script src="js/subscribe.js"></script>
-        <!--<script src="js/teams.js"></script>-->
+        <script src="js/teams.js"></script>
+        <script src="js/team.js"></script>
         <!-- <script src="js/calendar_feed.js"></script> -->
         <script src="js/blog_feed.js"></script>
         <script src="https://apis.google.com/js/client.js?onload=loadCalendarApi"></script>

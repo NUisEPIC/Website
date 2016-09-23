@@ -10,6 +10,7 @@
 body {
   margin-top: 40px;
 }
+
 #general-member-button:hover {
     background-color: #fc0d38;
     color: white;
@@ -72,9 +73,15 @@ section.ui.grid {
 }
 
 
-#chart {
+#team-diagram {
   height: 600px;
+  width: 600px;
 }
+
+#epic-logo, #wildhacks-logo, #sprout-logo, #launch-logo, #hacknu-logo, #branding-slice, #bizdev-slice, #tech-slice {
+    cursor:pointer;
+}
+
 #about-us {
   position: relative;
 }
@@ -153,80 +160,11 @@ section.ui.grid:nth-child(even)::before {
   width: 100%;
 }
 
-#team-icon-wrapper{
-  margin: 0 auto;
-  position: relative;
-  width: 400px;
-  height: 400px;
-  float: left;
-}
-
-.circle{
-  top: 150px;
-  left: 150px;
-  width: 100px;
-  height: 100px;
-  position: absolute;
-  transform-origin: 50% 50%;
-}
-
 iframe{
   width:560px;
   height:315px;
 }
 
-#circle1 {
-  transform: rotate(0deg) translateY(-150px);
-  cursor:pointer;
-}
-#circle2 {
-  transform: rotate(90deg) translateY(-150px);
-  cursor:pointer;
-}
-#circle2 * {
-  transform: rotate(-90deg);
-}
-#circle2 p {
-  transform-origin: top left;
-  text-align: center;
-  position: relative;
-  left: 80px;
-}
-#circle3 {
-  transform: rotate(180deg) translateY(-150px);
-  cursor:pointer;
-}
-#circle3 * {
-  transform: rotate(-180deg);
-}
-#circle1 p {
-  text-align: center;
-}
-#circle3 p {
-  text-align: center;
-}
-#circle4 {
-  transform: rotate(270deg) translateY(-150px);
-  cursor:pointer;
-}
-#circle4 * {
-  transform: rotate(-270deg);
-}
-#circle5 {
-  transform: rotate(288deg) translateY(-150px);
-  cursor:pointer;
-}
-#circle5 * {
-  transform: rotate(-288deg);
-}
-#center-circle {
-  top: 150px;
-  left: 160px;
-  width: 80px;
-  height: 80px;
-  background: url("assets/images/epic.png");
-  background-size: contain;
-}
 .ui button{
   color: red;
 }
@@ -275,7 +213,7 @@ iframe{
     width: 100%;
   }
   iframe {
-    width:400px; 
+    width:400px;
     height:315px;
   }
 }

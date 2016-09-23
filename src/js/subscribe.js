@@ -7,19 +7,34 @@ $(document).ready(function() {
 
     $('#subscribe-form').on('submit', function(event) {
         event.preventDefault();
-        console.log(getFormData($(this)))
         $.ajax({
             type: "POST",
             url: "http://localhost:3000/list/subscribe/news",
             dataType: 'json',
             data: getFormData($(this)),
             success: function() {
-                $('#subscribe-modal').modal('hide')
+                $('#subscribe-modal').modal('hide');
             },
             error: function() {
-                $('#subscribe-modal').modal('hide')
+                $('#subscribe-modal').modal('hide');
             }
-        })
+        });
+    });
+
+    $('#general-member-input').on('submit', function(event) {
+        event.preventDefault();
+        $.ajax({
+            type: "POST",
+            url: "http://localhost:3000/list/subscribe/news",
+            dataType: 'json',
+            data: getFormData($(this)),
+            success: function() {
+                console.log('success')
+            },
+            error: function() {
+                console.log('error')
+            }
+        });
     });
 });
 
@@ -29,7 +44,6 @@ function getFormData($form){
 
     $.map(unindexed_array, function(n, i){
         indexed_array[n['name']] = n['value'];
-
     });
 
     return indexed_array;
