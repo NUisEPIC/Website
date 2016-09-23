@@ -13,6 +13,7 @@ function onSuccess(data) {
           $(description).addClass('middle aligned content description');
 
           var title = description.appendChild(document.createElement('a'));
+          $(title).attr('href', 'http://localhost:2368' + post.url)
           title.appendChild(document.createTextNode(post.title)); $(title).addClass('header');
 
           var time = description.appendChild(document.createElement('div'));
