@@ -1,169 +1,362 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <link rel="stylesheet" type="text/css" href="bower_components/semantic/dist/semantic.css">
-    <link rel="stylesheet" type="text/css" href="main.css">
-  </head>
-  <body>
-    <div class="ui top fixed menu">
-      <div class="item"><img src="assets/logos/epic.png"></div>
-      <a href="#home"class="item">Home</a>
-      <a href="#about-us"class="item">About</a>
-      <a href="#teams"class="item">Teams</a>
-      <div class="right menu">
-        <div class="ui item">
-          <div id="showSubscribe" class="ui primary button">Subscribe to our newsletter</div>
-        </div>
-      </div>
-    </div>
-
-    <div id="subscribe" class="ui large modal">
-      <center class="aligned header">EPIC Newsletter Subscription</center>
-      <div class="content">
-        <form class="ui form">
-          <label>Name</label>
-          <div class="field">
-            <div class="two fields">
-              <div class="field">
-                <input type="text" name="firstName" placeholder="First Name">
-              </div>
-              <div class="field">
-                <input type="text" name="lastName" placeholder="Last Name">
-              </div>
+    <head>
+        <link rel="stylesheet" type="text/css" href="bower_components/semantic/dist/semantic.css">
+        <link rel="stylesheet" type="text/css" href="main.css">
+    </head>
+    <body>
+        <div class="ui top fixed menu">
+            <div class="item"><img src="assets/logos/epic.png"></div>
+            <a href="#home" class="item">Home</a>
+            <a href="#about-us" class="item">About</a>
+            <a href="#teams" class="item">Teams</a>
+            <div class="right menu">
+                <div class="ui item">
+                    <div id="showSubscribe" class="ui primary button">Subscribe to our newsletter</div>
+                </div>
             </div>
-          </div>
-          <label>Email Address</label>
-          <div class="field">
-            <div class="field">
-              <input type="email" name="email" placeholder="Email">
+        </div>
+
+        <div id="subscribe" class="ui large modal">
+            <center class="aligned header">EPIC Newsletter Subscription</center>
+            <div class="content">
+                <form class="ui form">
+                    <label>Name</label>
+                    <div class="field">
+                        <div class="two fields">
+                            <div class="field">
+                                <input type="text" name="firstName" placeholder="First Name">
+                            </div>
+                            <div class="field">
+                                <input type="text" name="lastName" placeholder="Last Name">
+                            </div>
+                        </div>
+                    </div>
+                    <label>Email Address</label>
+                    <div class="field">
+                        <div class="field">
+                            <input type="email" name="email" placeholder="Email">
+                        </div>
+                    </div>
+                    <label>Which newsletter would you like to subscribe to?</label>
+                    <div class="grouped fields">
+                        <div class="field">
+                            <div class="ui radio checkbox">
+                                <input type="radio" name="type" checked="checked">
+                                <label>Student</label>
+                            </div>
+                        </div>
+                        <div class="field">
+                            <div class="ui radio checkbox">
+                                <input type="radio" name="type">
+                                <label>Alumni</label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="ui green fluid button">Subscribe!</div>
+                </form>
             </div>
-          </div>
-          <label>Which newsletter would you like to subscribe to?</label>
-          <div class="grouped fields">
-            <div class="field">
-              <div class="ui radio checkbox">
-                <input type="radio" name="type" checked="checked">
-                <label>Student</label>
-              </div>
+        </div>
+
+        <!-- home-->
+        <section class="ui grid" id="home">
+            <div class="top aligned row">
+                <div class="centered column"><img src="assets/logos/epic_full.png" class="ui centered large image"></div>
             </div>
-            <div class="field">
-              <div class="ui radio checkbox">
-                <input type="radio" name="type">
-                <label>Alumni</label>
-              </div>
+            <div class="centered row">
+                <!-- spacer-->
+                <div class="column two wide"></div>
+                <div class="five wide column">
+                    <div class="row">
+                        <div class="ui dividing center aligned huge header">Upcoming Events</div>
+                    </div>
+                    <div class="feed row">
+                        <div id="event-feed" class="ui items">
+                            <div class="item">
+                                <div class="ui image calendar">
+                                    <div class="month">
+                                        <h2>Sep</h2>
+                                    </div>
+                                    <div class="date">
+                                        <h2>22nd</h2>
+                                    </div>
+                                </div>
+                                <div class="middle aligned content description">
+                                    <a class="header">Fall Recruitment Applications Open</a>
+                                    <div class="meta">Thu, Sep 22, 2016 11:59 PM</div>
+                                    <div>
+                                        <p>Applications for the EPIC Team, for GM, for Launch, and for Sprout</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="item">
+                                <div class="ui image calendar">
+                                    <div class="month">
+                                        <h2>Sep</h2>
+                                    </div>
+                                    <div class="date">
+                                        <h2>28th</h2>
+                                    </div>
+                                </div>
+                                <div class="middle aligned content description">
+                                    <a class="header">Fall Recruitment Info Session #1</a>
+                                    <div class="meta">Wed, Sep 28, 2016 6:00 PM</div>
+                                    <div>
+                                        <p>Are you EPIC? Come find out at the information session!</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="item">
+                                <div class="ui image calendar">
+                                    <div class="month">
+                                        <h2>Sep</h2>
+                                    </div>
+                                    <div class="date">
+                                        <h2>28th</h2>
+                                    </div>
+                                </div>
+                                <div class="middle aligned content description">
+                                    <a class="header">Hack Night</a>
+                                    <div class="meta">Wed, Sep 28, 2016 7:00 PM</div>
+                                    <div>
+                                        <p>Join us for Hack Night to for a hands-on lesson in technology. Topic TBA and no prior experience necessary. Food will be provided!</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="item">
+                                <div class="ui image calendar">
+                                    <div class="month">
+                                        <h2>Sep</h2>
+                                    </div>
+                                    <div class="date">
+                                        <h2>29th</h2>
+                                    </div>
+                                </div>
+                                <div class="middle aligned content description">
+                                    <a class="header">Fall Recruitment Info Session #2</a>
+                                    <div class="meta">Thu, Sep 29, 2016 7:00 PM</div>
+                                    <div>
+                                        <p>Are you EPIC? Come find out at the information session!</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="item">
+                                <div class="ui image calendar">
+                                    <div class="month">
+                                        <h2>Sep</h2>
+                                    </div>
+                                    <div class="date">
+                                        <h2>30th</h2>
+                                    </div>
+                                </div>
+                                <div class="middle aligned content description">
+                                    <a class="header">Fall Recruitment Applications Close</a>
+                                    <div class="meta">Fri, Sep 30, 2016 11:59 PM</div>
+                                    <div>
+                                        <p>Applications for the EPIC Team, for GM, for Launch, and for Sprout</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="item">
+                                <div class="ui image calendar">
+                                    <div class="month">
+                                        <h2>Oct</h2>
+                                    </div>
+                                    <div class="date">
+                                        <h2>5th</h2>
+                                    </div>
+                                </div>
+                                <div class="middle aligned content description">
+                                    <a class="header">Hack Night</a>
+                                    <div class="meta">Wed, Oct 5, 2016 7:00 PM</div>
+                                    <div>
+                                        <p>Join us for Hack Night to for a hands-on lesson in technology. Topic TBA and no prior experience necessary. Food will be provided!</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="item">
+                                <div class="ui image calendar">
+                                    <div class="month">
+                                        <h2>Oct</h2>
+                                    </div>
+                                    <div class="date">
+                                        <h2>6th</h2>
+                                    </div>
+                                </div>
+                                <div class="middle aligned content description">
+                                    <a class="header">Sprout Fall 2016</a>
+                                    <div class="meta">TBA</div>
+                                    <div>
+                                        <p>Come learn about Sprout, EPIC's emerging entrepreneurship pre-orientation program</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="item">
+                                <div class="ui image calendar">
+                                    <div class="month">
+                                        <h2>Oct</h2>
+                                    </div>
+                                    <div class="date">
+                                        <h2>9th</h2>
+                                    </div>
+                                </div>
+                                <div class="middle aligned content description">
+                                    <a class="header">New Member Orientation + GM 1</a>
+                                    <div class="meta">Sun, Oct 9, 2016 3:00 PM</div>
+                                    <div>
+                                        <p>New members and general members come join us to learn about EPIC and what we do</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="item">
+                                <div class="ui image calendar">
+                                    <div class="month">
+                                        <h2>Oct</h2>
+                                    </div>
+                                    <div class="date">
+                                        <h2>10th</h2>
+                                    </div>
+                                </div>
+                                <div class="middle aligned content description">
+                                    <a class="header">EPIC Week</a>
+                                    <div class="meta">Mon, Oct 10th, 2016</div>
+                                    <div>
+                                        <p>Celebrate entrepreneurship with us all week long at EPIC Week!</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="item">
+                                <div class="ui image calendar">
+                                    <div class="month">
+                                        <h2>Oct</h2>
+                                    </div>
+                                    <div class="date">
+                                        <h2>12th</h2>
+                                    </div>
+                                </div>
+                                <div class="middle aligned content description">
+                                    <a class="header">Hack Night</a>
+                                    <div class="meta">Wed, Oct 12, 2016 7:00 PM</div>
+                                    <div>
+                                        <p>Join us for Hack Night to for a hands-on lesson in technology. Topic TBA and no prior experience necessary. Food will be provided!</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- spacer-->
+                <div class="column two wide"></div>
+                <div class="five wide column">
+                    <div class="row">
+                        <div class="ui dividing center aligned huge header">Recent News</div>
+                    </div>
+                    <div class="feed row">
+                        <div id="blog-feed" class="ui items"></div>
+                    </div>
+                </div>
+                <!-- spacer-->
+                <div class="column two wide"></div>
             </div>
-          </div>
-          <div class="ui green fluid button">Subscribe!</div>
-        </form>
-      </div>
-    </div>
+        </section>
 
-    <!-- home-->
-    <section class="ui grid" id="home">
-      <div class="top aligned row">
-        <div class="centered column"><img src="assets/logos/epic_full.png" class="ui centered large image"></div>
-      </div>
-      <div class="centered row">
-        <!-- spacer-->
-        <div class="column two wide"></div>
-        <div class="five wide column">
-          <div class="row">
-            <div class="ui dividing center aligned huge header">Upcoming Events</div>
-          </div>
-          <div class="feed row">
-            <div id="event-feed" class="ui items"></div>
-          </div>
-        </div>
-        <!-- spacer-->
-        <div class="column two wide"></div>
-        <div class="five wide column">
-          <div class="row">
-            <div class="ui dividing center aligned huge header">Recent News</div>
-          </div>
-          <div class="feed row">
-            <div id="blog-feed" class="ui items"></div>
-          </div>
-        </div>
-        <!-- spacer-->
-        <div class="column two wide"></div>
-      </div>
-    </section>
+        <!-- about-->
+        <section id="about-us" class="ui grid">
+            <div class="left row">
+                <div class="column sixteen wide center aligned">
+                    <h1>Mission: To cultivate entrepreneurial mindsets and skill sets</h1>
+                </div>
+                <div class="video">
+                    <iframe width="560" height="315" frameborder="0" allowfullscreen src="https://www.youtube.com/embed/-MVcuOELEZY"></iframe>
+                </div>
+                <div class="right row" id="about-us-text">Our Goal is to foster a community where all students can be entrepreneurs. We work hard towards this goal. As a exciting, enthusiastic, diverse team we work hard to promote entrepreneurship on Northwestern Univereity's campus</div>
+            </div>
+        </section>
 
-    <!-- about-->
-    <section id="about-us" class="ui grid">
-      <div class="left row">
-        <div class="column sixteen wide center aligned">
-          <h1>Mission: To cultivate entrepreneurial mindsets and skill sets</h1>
-        </div>
-        <div class="video">
-          <iframe width="560" height="315" frameborder="0" allowfullscreen src="https://www.youtube.com/embed/-MVcuOELEZY"></iframe>
-        </div>
-        <div class="right row" id="about-us-text">Our Goal is to foster a community where all students can be entrepreneurs. We work hard towards this goal. As a exciting, enthusiastic, diverse team we work hard to promote entrepreneurship on Northwestern Univereity's campus</div>
-      </div>
-    </section>
+        <!-- teams-->
+        <section class="ui grid" id="teams">
+            <div class="centered row">
+                <h1>EPIC Teams</h1>
+            </div>
+            <div id="team-page">
+                <p id="team-info">Click a button</p>
+                <div id="team-icon-wrapper">
+                    <div
+                        class="circle"
+                        id="circle1"
+                        onclick="myFunction('WildHacks is an annual student-run intercollegiate hackathon that brings together 500+ student hackers and industry professionals for 36 hours of hacking, learning, and collaboration, sprinkled with inspiring talks and just-for-fun activities.')">WildHacks</div>
 
-    <!-- teams-->
-    <section class="ui grid" id="teams">
-      <div class="centered row">
-        <h1>EPIC Teams</h1>
-      </div>
-      <div id="team-page">
-    <p id="team-info">Click a button</p>
-    <div id="team-icon-wrapper">
-        <div class = "circle" id="circle1" onclick="myFunction('WildHacks is an annual student-run intercollegiate hackathon that brings together 500+ student hackers and industry professionals for 36 hours of hacking, learning, and collaboration, sprinkled with inspiring talks and just-for-fun activities.')">WildHacks</div>
+                    <div
+                        class="circle"
+                        id="circle2"
+                        onclick="myFunction('HackNorthwestern, Women in Computing, and IEEE partner to bring you weekly hack nights every quarter. Join them every Wednesday from 7-10pm in the Garage – bring your laptop and we will take care of the food and awesome tutorials. Meet fellow hackers, work on cool projects, and pick up new skills. All backgrounds and experience levels are welcome!')">Hack NU</div>
 
-        <div class = "circle" id="circle2" onclick="myFunction('HackNorthwestern, Women in Computing, and IEEE partner to bring you weekly hack nights every quarter. Join them every Wednesday from 7-10pm in the Garage – bring your laptop and we will take care of the food and awesome tutorials. Meet fellow hackers, work on cool projects, and pick up new skills. All backgrounds and experience levels are welcome!')">Hack NU</div>
+                    <div class="circle" id="circle3" onclick="myFunction('Launch teaches entrepreneurial thinking and applicable skills, using startups as learning vehicles. Launch mentors students from ideation to iteration to creation of the final product.')">Launch</div>
 
-        <div class = "circle" id="circle3" onclick="myFunction('Launch teaches entrepreneurial thinking and applicable skills, using startups as learning vehicles. Launch mentors students from ideation to iteration to creation of the final product.')">Launch</div>
+                    <div
+                        class="circle"
+                        id="circle4"
+                        onclick="myFunction('The business development team maintains and builds EPIC’s professional network, engaging with alums, companies, and entrepreneurs, as well as manage EPIC’s finances. The team is in charge of programs such as alumni Starter Dinners and the Startup Career Fair, and also attends various events to build EPIC's network. Through external expansion, we are able to facilitate internal growth for the organization.')">Biz Dev</div>
 
-        <div class = "circle" id="circle4" onclick="myFunction('The business development team maintains and builds EPIC’s professional network, engaging with alums, companies, and entrepreneurs, as well as manage EPIC’s finances. The team is in charge of programs such as alumni Starter Dinners and the Startup Career Fair, and also attends various events to build EPIC's network. Through external expansion, we are able to facilitate internal growth for the organization.')">Biz Dev</div>
+                    <div class="circle" id="circle5" onclick="myFunction(5)">Sprout</div>
+                    <div class="circle" id="center-circle">
+                        <div
+                            onclick="myFunction('Tech creates all digital platforms used by EPIC, such as this website, our blog, and our online application. The team additionally manages any back-end work, teaches members how to create software that is beautiful on the inside and out, and comes up with innovative projects that support EPIC’s mission.')">tech</div>
+                        <div
+                            onclick="myFunction('Branding is home to some of the best creative minds of EPIC – everything EPIC that you see about , from every carefully conceptualized logo to the look and feel of all content created by EPIC. This creative powerhouse  shapes EPIC’s brand into something approachable, empowering, and inspiring, to  everyone within the NU community and beyond.')">branding</div>
+                    </div>
+                </div>
+            </div>
+            <div id="general-membership-wrapper">General membership is an opportunity for students to try out entrepreneurship in an open and supportive environment. They can engage with other student entrepreneurs, listen to kick ass speakers, and take advantage of EPIC’s network.</div>
+        </section>
 
-        <div class = "circle" id="circle5" onclick="myFunction(5)">Sprout</div>
-        <div class = "circle" id="center-circle">
-          <div onclick="myFunction('Tech creates all digital platforms used by EPIC, such as this website, our blog, and our online application. The team additionally manages any back-end work, teaches members how to create software that is beautiful on the inside and out, and comes up with innovative projects that support EPIC’s mission.')">tech</div>
-          <div onclick="myFunction('Branding is home to some of the best creative minds of EPIC – everything EPIC that you see about , from every carefully conceptualized logo to the look and feel of all content created by EPIC. This creative powerhouse  shapes EPIC’s brand into something approachable, empowering, and inspiring, to  everyone within the NU community and beyond.')">branding</div>
-        </div>
-    </div>
-    </div>
-    <div id = "general-membership-wrapper">General membership is an opportunity for students  to try out entrepreneurship in an open and supportive environment. They can engage with other student entrepreneurs, listen to kick ass speakers, and take advantage of EPIC’s network.</div>
-    </section>
+        <section id="footer" class="ui segment">
+            <div class="ui grid">
+                <div class="ui centered row">
+                    <div class="ui header">EPIC</div>
+                </div>
+                <div class="ui centered row">
+                    <p class="contact">
+                        The Garage<br>
+                        2311 Campus Drive<br>
+                        Evanston, IL 60208<br>
+                        <br><br>
+                        <a href="mailto:contact@nuisepic.com">
+                            <i class="big red mail square link icon"></i>
+                        </a>
+                        <a href="https://www.facebook.com/nuisepic">
+                            <i class="big red facebook square link icon"></i>
+                        </a>
+                        <a href="https://twitter.com/EPICatNU">
+                            <i class="big red twitter square link icon"></i>
+                        </a>
+                        <a href="https://www.linkedin.com/company/epic-northwestern">
+                            <i class="big red linkedin square link icon"></i>
+                        </a>
+                    </p>
+                </div>
+                <div class="centered row">
+                    <div class="eight wide center aligned column">
+                        <img class="ui centered medium image" src="assets/logos/Northwestern-Formal_horizontal.png"></img>
+                    </div>
+                    <div class="eight wide center aligned column">
+                        <img class="ui centered medium image" src="assets/logos/farley-logo-300x93.png"></img>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-    <section id="footer" class="ui segment">
-      <div class="ui grid">
-        <div class="ui centered row">
-          <div class="ui header">EPIC</div>
-        </div>
-        <div class="ui centered row">
-            <p class="contact">
-                The Garage<br>
-                2311 Campus Drive<br>
-                Evanston, IL 60208<br>
-                <br><br>
-                <a href="mailto:contact@nuisepic.com"><i class="big red mail square link icon"></i></a><a href="https://www.facebook.com/nuisepic"><i class="big red facebook square link icon"></i></a><a href="https://twitter.com/EPICatNU"><i class="big red twitter square link icon"></i></a><a href="https://www.linkedin.com/company/epic-northwestern"><i class="big red linkedin square link icon"></i></a>
-            </p>
-        </div>
-        <div class="centered row">
-          <div class="eight wide center aligned column">
-            <img class="ui centered medium image" src="assets/logos/Northwestern-Formal_horizontal.png"></img>
-          </div>
-          <div class="eight wide center aligned column">
-            <img class="ui centered medium image" src="assets/logos/farley-logo-300x93.png"></img>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <script src="bower_components/jquery/dist/jquery.js"></script>
-    <script src="bower_components/semantic/dist/semantic.js"></script>
-    <script src="bower_components/moment/moment.js"></script>
-    <script src="//localhost:2368/shared/ghost-url.min.js"></script>
-    <script src="bower_components/markdown/lib/markdown.js"></script>
-    <script src="js/env.js"></script>
-    <script src="js/subscribe.js"></script>
-    <script src="js/teams.js"></script>
-    <script src="js/calendar_feed.js"></script>
-    <script src="js/blog_feed.js"></script>
-    <script src="js/team.js"></script>
-    <script src="https://apis.google.com/js/client.js?onload=loadCalendarApi"></script>
-  </body>
+        <script src="bower_components/jquery/dist/jquery.js"></script>
+        <script src="bower_components/semantic/dist/semantic.js"></script>
+        <script src="bower_components/moment/moment.js"></script>
+        <script src="//localhost:2368/shared/ghost-url.min.js"></script>
+        <script src="bower_components/markdown/lib/markdown.js"></script>
+        <script src="js/env.js"></script>
+        <script src="js/subscribe.js"></script>
+        <script src="js/teams.js"></script>
+        <!-- <script src="js/calendar_feed.js"></script> -->
+        <script src="js/blog_feed.js"></script>
+        <script src="js/team.js"></script>
+        <script src="https://apis.google.com/js/client.js?onload=loadCalendarApi"></script>
+    </body>
 </html>

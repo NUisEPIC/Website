@@ -54,7 +54,7 @@ function loadCalendarApi() {
 function listUpcomingEvents() {
   gapi.client.setApiKey('AIzaSyAp_qFwhN7U2XtgUwRiNrMDhjOYicHBDmQ');
   var request = gapi.client.calendar.events.list({
-    'calendarId': 'leon3546@gmail.com',
+    'calendarId': 'g8q8g4on4aalcs1ab9jpo2fbt4@group.calendar.google.com',
     'timeMin': (new Date()).toISOString(),
     'showDeleted': false,
     'singleEvents': true,
