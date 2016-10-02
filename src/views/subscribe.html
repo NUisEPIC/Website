@@ -1,0 +1,40 @@
+<div class="ui large modal" id="subscribe-modal">
+    <center class="aligned header">EPIC Newsletter Subscription</center>
+    <div class="content">
+        <form class="ui form" id="subscribe-form">
+            <label>Name</label>
+            <div class="field">
+                <div class="two fields">
+                    <div class="field">
+                        <input type="text" name="firstName" placeholder="First Name">
+                    </div>
+                    <div class="field">
+                        <input type="text" name="lastName" placeholder="Last Name">
+                    </div>
+                </div>
+            </div>
+            <label>Email Address</label>
+            <div class="field">
+                <div class="field">
+                    <input type="email" name="email" placeholder="Email">
+                </div>
+            </div>
+            <label>Which newsletter would you like to subscribe to?</label>
+            <div class="grouped fields">
+                <div class="field">
+                    <div class="ui radio checkbox">
+                        <input type="radio" name="type" checked="checked" value="student">
+                        <label>Student</label>
+                    </div>
+                </div>
+                <div class="field">
+                    <div class="ui radio checkbox">
+                        <input type="radio" name="type" value="alumni">
+                        <label>Alumni</label>
+                    </div>
+                </div>
+            </div>
+            <button class="ui custom-red fluid button" id="subscribe-button">Subscribe!</button>
+        </form>
+    </div>
+</div>

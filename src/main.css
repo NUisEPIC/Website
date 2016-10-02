@@ -82,26 +82,27 @@ section.ui.grid {
     cursor:pointer;
 }
 
-#about-us {
+#about {
   position: relative;
 }
-#about-us .pictures {
+
+#about .pictures {
   position: absolute;
   display: block;
   top: 0;
   width: 225px;
 }
-#about-us .video{
+#about .video{
   display: block;
   padding-left: 30px;
   padding-right: 30px;
 }
-#about-us-text{
+#about-text{
   text-align: left;
   width: 400px;
 }
 @media screen and (max-width: 1000px) {
-  #about-us .pictures img {
+  #about .pictures img {
     display: none;
   }
 }
@@ -112,13 +113,13 @@ section.ui.grid {
 #footer .contact {
   text-align: center;
 }
-section.ui.grid:nth-child(even) {
+section:nth-child(odd) {
   position: relative;
   background: linear-gradient(to top right, #ed2d39, rgb(219, 40, 40));
   color: #fff;
   margin: 250px 0;
 }
-section.ui.grid:nth-child(even)::before {
+section:nth-child(odd)::before {
   position: absolute;
   display: block;
   background: inherit;
@@ -204,11 +205,11 @@ iframe{
 }
 
 @media screen and (max-width: 1040px) {
-  #about-us .video{
+  #about .video{
     display: block;
     width:100%;
   }
-  #about-us-text{
+  #about-text{
     display: block;
     width: 100%;
   }

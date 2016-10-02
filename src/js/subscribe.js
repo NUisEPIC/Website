@@ -2,7 +2,7 @@ $(document).ready(function() {
     $('#subscribe-modal').modal();         // Initialize modal
 
     $('#show-subscribe').click(function() {
-        $('#subscribe-modal').modal('show');
+        $('#subscribe').modal('show');
     });
 
     $('#subscribe-form').on('submit', function(event) {
@@ -13,10 +13,10 @@ $(document).ready(function() {
             dataType: 'json',
             data: getFormData($(this)),
             success: function() {
-                $('#subscribe-modal').modal('hide');
+                $('#subscribe').modal('hide');
             },
             error: function() {
-                $('#subscribe-modal').modal('hide');
+                $('#subscribe').modal('hide');
             }
         });
     });
