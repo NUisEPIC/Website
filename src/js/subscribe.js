@@ -29,13 +29,11 @@ $(document).ready(function() {
             dataType: 'json',
             data: getFormData($(this)),
             success: function() {
-                console.log('ss')
                 $('#general-member-input').removeClass('error');
                 $('#general-member-input').addClass('success');
-                $('#general-member-input').form('clear')
+                $('#general-member-input').form('clear');
             },
             error: function() {
-                console.log('ee')
                 $('#general-member-input').removeClass('success');
                 $('#general-member-input').addClass('error');
             }
