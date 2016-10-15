@@ -76,6 +76,7 @@ section.ui.grid {
 #team-diagram {
   height: 600px;
   width: 600px;
+  margin: 0 auto;
 }
 
 #epic-logo, #wildhacks-logo, #sprout-logo, #launch-logo, #hacknu-logo, #branding-slice, #bizdev-slice, #tech-slice {
@@ -204,7 +205,7 @@ iframe{
     }
 }
 
-@media screen and (max-width: 1040px) {
+@media screen and (max-width: 1150px) {
   #about .video{
     display: block;
     width:100%;
