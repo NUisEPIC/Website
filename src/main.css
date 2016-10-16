@@ -72,6 +72,11 @@ section.ui.grid {
   background-size: contain;
 }
 
+#mission-statement{
+  width: 100%;
+  text-align: center;
+  margin-bottom: 35px;
+}
 
 #team-diagram {
   height: 600px;
