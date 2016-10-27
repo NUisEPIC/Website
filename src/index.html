@@ -4,11 +4,13 @@
         <link rel="stylesheet" type="text/css" href="bower_components/semantic/dist/semantic.css">
         <link rel="stylesheet" type="text/css" href="main.css">
     </head>
-    <body>
+    <body class="dimmable">
         <!-- menu -->
         <div id="menu"></div>
         <!-- subscribe -->
         <div id="subscribe"></div>
+        <div id="success"></div>
+        <div id="error"></div>
         <!-- home -->
         <img src="assets/logos/epic_full.png" id="logo">
         <section id="home"></section>
@@ -30,6 +32,8 @@
                 $(function() {
                     $('#menu').load('views/menu.html');
                     $('#subscribe').load('views/subscribe.html');
+                    $('#success').load('views/success.html');
+                    $('#error').load('views/error.html');
                     $('#home').load('views/home.html');
                     $('#about').load('views/about.html');
                     $('#teams').load('views/team.html');

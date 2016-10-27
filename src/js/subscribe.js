@@ -1,8 +1,9 @@
-$(document).ready(function() {
-    $('#subscribe-modal').modal();         // Initialize modal
+$(window).load(function() {
+    $('#subscribe-modal').modal();
 
     $('#show-subscribe').click(function() {
-        $('#subscribe').modal('show');
+        console.log('hi')
+        $('#subscribe-modal').modal('show');
     });
 
     $('#subscribe-form').on('submit', function(event) {
@@ -13,10 +14,18 @@ $(document).ready(function() {
             dataType: 'json',
             data: getFormData($(this)),
             success: function() {
-                $('#subscribe').modal('hide');
+                $('#subscribe-modal').modal('hide');
+                $('#success>.message').removeClass('hidden');
+                setTimeout(function() {
+                    $('#success>.message').addClass('hidden');
+                }, 3000);
             },
             error: function() {
-                $('#subscribe').modal('hide');
+                $('#subscribe-modal').modal('hide');
+                $('#error>.message').removeClass('hidden');
+                setTimeout(function() {
+                    $('#error>.message').addClass('hidden');
+                }, 3000);
             }
         });
     });
@@ -30,12 +39,18 @@ $(document).ready(function() {
             data: getFormData($(this)),
             success: function() {
                 $('#general-member-input').removeClass('error');
-                $('#general-member-input').addClass('success');
+                $('#success>.message').removeClass('hidden');
                 $('#general-member-input').form('clear');
+                setTimeout(function() {
+                    $('#success>.message').addClass('hidden');
+                }, 3000);
             },
             error: function() {
                 $('#general-member-input').removeClass('success');
-                $('#general-member-input').addClass('error');
+                $('#error>.message').removeClass('hidden');
+                setTimeout(function() {
+                    $('#error>.message').addClass('hidden');
+                }, 3000);
             }
         });
     });
