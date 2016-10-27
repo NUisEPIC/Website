@@ -35,23 +35,22 @@ section.ui.grid {
 }
 
 #logo {
-  position: fixed;
+  position: absolute;
   top: 50px;
-  z-index: 2;
   left: calc(50% - 225px);
   width: 450px;
   max-height: 100%;
-  transition: all ease 0.5s;
+  transition: transform ease 0.5s, top ease 0.5s;
+}
+
+#logo.shrink {
+  top: 0;
+  transform: scale(0.5);
 }
 
 #logo + section {
   padding-top: 200px;
   transition: padding-top ease 0.5s;
-}
-
-#logo.shrink {
-  top: 5px;
-  transform: scale(0.5);
 }
 
 #logo.shrink + section {
@@ -147,7 +146,7 @@ section:nth-of-type(even) {
   position: relative;
   background: linear-gradient(to top right, #ed2d39, rgb(219, 40, 40));
   color: #fff;
-  margin: 250px 0;
+  margin: 200px 0;
 }
 section:nth-of-type(even)::before {
   position: absolute;
