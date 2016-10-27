@@ -94,6 +94,10 @@ section.ui.grid {
   background-repeat: no-repeat;
   background-size: contain;
 }
+.blog.feed {
+  overflow: hidden;
+  padding: 0;
+}
 
 #mission-statement{
   width: 100%;
