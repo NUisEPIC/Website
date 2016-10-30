@@ -63,10 +63,8 @@ function listUpcomingEvents() {
   });
 
   request.execute(function(resp) {
-    console.log(resp);
     var events = resp.items;
     displayResults(events);
-
   });
 }
 
@@ -82,7 +80,7 @@ function displayResults(events) {
   if (events.length > 0) {
     for (i = 0; i < events.length; i++) {
       var event = events[i];
-      var when = moment(new Date(event.start.dateTime));
+      var when = moment(new Date(event.start.dateTime || event.start.date));
       if (!when) {
         when = moment(event.start.date);
       }
