@@ -1,3 +1,3 @@
 (function() {
-    $('culture-video').embed();
+    $('#culture-video').embed();
 }())
