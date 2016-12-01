@@ -1,0 +1,3 @@
+(function() {
+    $('culture-video').embed();
+}())

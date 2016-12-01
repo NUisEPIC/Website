@@ -1,46 +1,66 @@
-var gulp = require('gulp')
-  , $    = require('gulp-load-plugins')()
-  , bs   = require('browser-sync').create()
+'use strict';
+const gulp = require('gulp');
+const util = require('gulp-util');
+const $ = require('gulp-load-plugins')();
+const bs = require('browser-sync').create();
 
-gulp.task('jade', function () {
-  gulp.src('src/jade/index.jade')
-    .pipe($.jade())
-    .pipe(gulp.dest('.tmp'))
-    .pipe(bs.reload())
-})
+gulp.task('html:compile', () => {
+    gulp.src(['src/layout.html'])
+        .pipe($.rename('index.html'))
+        .pipe($.fileInclude({
+            prefix: '@@',
+            basepath: 'src/views/'
+        }))
+        .pipe(gulp.dest('src/'))
+});
 
-gulp.task('stylus', function () {
-  gulp.src('src/stylus/main.styl')
-    .pipe($.stylus())
-    .pipe(gulp.dest('.tmp'))
-    .pipe(bs.reload({ stream: true }))
-})
+gulp.task('html:minify', ['html:compile'], () => {
+    let options = {
+        collapseWhitespace: true,
+        minifyCSS: true,
+        minifyJS: true,
+        removeComments: true
+    };
 
-gulp.task('js', function () {
-  gulp.src('src/js/**/*')
-    .pipe(gulp.dest('.tmp/js'))
-})
+    gulp.src('src/index.html')
+        .pipe($.htmlmin(options))
+        .pipe(gulp.dest('public/'));
+});
 
-gulp.task('watch', function () {
-  // gulp.watch('src/jade/**/*.jade', ['jade'])
-  // gulp.watch('src/stylus/**/*.styl', ['stylus'])
-  // gulp.watch('src/js/**/*.js', ['js'])
-  gulp.watch('src/index.html').on('change', function () {
-    bs.reload()
-  })
-  gulp.watch('src/main.css').on('change', function () {
-    bs.reload()
-  })
-})
+gulp.task('html', ['html:compile', 'html:minify']);
 
-gulp.task('serve', function () {
-  bs.init({
-    port: 8000,
-    server: {
-      baseDir: './src'
-    }
-  })
-})
+gulp.task('css', () => {
+    gulp.src('src/css/*.css')
+        .pipe($.cleanCss())
+        .pipe(gulp.dest('public/css/'));
+});
 
-gulp.task('develop', ['serve', 'watch'])
+gulp.task('js', () => {
+    gulp.src('src/js/*.js')
+        .pipe($.uglify())
+        .pipe(gulp.dest('public/js/'));
+});
 
+gulp.task('watch', () => {
+    gulp.watch(['src/views/**/*.html'], ['html:compile']);
+    gulp.watch(['src/index.html'])
+        .on('change', () => {
+            bs.reload();
+        });
+});
+
+gulp.task('build', ['html', 'css', 'js'], () => {
+    gulp.src(['src/assets/**/*'])
+        .pipe(gulp.dest('public/assets'));
+});
+
+gulp.task('serve', () => {
+    bs.init({
+        port: 8000,
+        server: {
+            baseDir: 'src'
+        }
+    });
+});
+
+gulp.task('develop', ['html:compile', 'serve', 'watch']);

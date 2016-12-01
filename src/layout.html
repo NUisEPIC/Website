@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <link rel="stylesheet" type="text/css" href="bower_components/semantic/dist/semantic.css">
+        <link rel="stylesheet" type="text/css" href="css/main.css">
+    </head>
+    <body class="dimmable">
+        <!-- Menu -->
+        @@include('menu.html')
+        <!-- subscribe -->
+        @@include('success.html')
+        @@include('error.html')
+        @@include('subscribe.html')
+        <!-- home -->
+        @@include('home.html')
+        <!-- about -->
+        @@include('about.html')
+        <!-- teams -->
+        @@include('team.html')
+        <!-- footer -->
+        @@include('footer.html')
+
+        <script src="bower_components/jquery/dist/jquery.js"></script>
+        <script src="bower_components/semantic/dist/semantic.js"></script>
+        <script src="bower_components/moment/moment.js"></script>
+        <script src="bower_components/Snap.svg/dist/snap.svg.js"></script>
+        <script src="//localhost:2368/shared/ghost-url.min.js"></script>
+        <script src="bower_components/markdown/lib/markdown.js"></script>
+        <script src="js/env.js"></script>
+        <script src="js/load.js"></script>
+        <script src="js/subscribe.js"></script>
+        <script src="js/teams.js"></script>
+        <!-- <script src="js/calendar_feed.js"></script> -->
+        <script src="js/blog_feed.js"></script>
+
+        <script src="https://apis.google.com/js/client.js?onload=loadCalendarApi"></script>
+    </body>
+</html>

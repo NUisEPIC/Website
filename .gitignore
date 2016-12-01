@@ -39,8 +39,8 @@ src/bower_components
 .env
 src/js/env.js
 
-#
+# JS Hint Config
 .jshintrc
 
-# temporary build files
-.tmp
+# Compiled index.html file
+src/index.html

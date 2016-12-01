@@ -1,0 +1,1 @@
+!function(){$("culture-video").embed()}();

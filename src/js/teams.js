@@ -1,4 +1,4 @@
-(function($, Snap) {
+(function() {
     $(window).load(function() {
         var teams = [{
             name: 'Branding',
@@ -156,4 +156,4 @@
             return path;
         }
     })
-})(jQuery, Snap);
+})();
