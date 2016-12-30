@@ -120,7 +120,6 @@ section.ui.grid {
     width: 225px;
 }
 #about .video{
-    display: block;
     padding-left: 30px;
     padding-right: 30px;
 }
@@ -238,7 +237,6 @@ iframe{
 
 @media screen and (max-width: 1150px) {
     #about .video{
-        display: block;
         width:100%;
     }
     #about-text{

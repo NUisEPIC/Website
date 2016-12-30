@@ -44,3 +44,6 @@ src/js/env.js
 
 # Compiled index.html file
 src/index.html
+
+# Compiled and minified build for production
+build/

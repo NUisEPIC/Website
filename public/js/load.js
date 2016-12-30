@@ -1,1 +1,0 @@
-!function(){document.addEventListener("DOMContentLoaded",function(){setTimeout(function(){$("#logo").addClass("shrink")},1e3)})}();

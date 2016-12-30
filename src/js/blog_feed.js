@@ -1,6 +1,6 @@
 ghost.init({ clientId: "ghost-frontend", clientSecret: "617d69bbb120" });
 
-function onSuccess(data) {
+function appendPosts(data) {
   var feed = $('#blog-feed')[0];
 
   if (data.posts.length > 0) {
@@ -33,4 +33,7 @@ function onSuccess(data) {
 
 }
 
-$(document).ready(function () { $.get( ghost.url.api('posts', {limit: 10})).done(onSuccess); });
+$(function() {
+    $.get(ghost.url.api('posts', {limit: 10}))
+        .done(appendPosts);
+});

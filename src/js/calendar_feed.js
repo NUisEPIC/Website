@@ -1,7 +1,6 @@
 // Your Client ID can be retrieved from your project in the Google
 // Developer Console, https://console.developers.google.com
 var CLIENT_ID = '593405078961-0g630li5iqlrbqvgphfo0i2ivphfoqtb.apps.googleusercontent.com';
-
 var SCOPES = ["https://www.googleapis.com/auth/calendar.readonly"];
 
 /**
@@ -41,7 +40,7 @@ function handleAuthResult(authResult) {
  * once client library is loaded.
  */
 function loadCalendarApi() {
-  $(document).ready(function() {
+  $(function() {
     gapi.client.load('calendar', 'v3', listUpcomingEvents);
   });
 }

@@ -24,7 +24,7 @@ gulp.task('html:minify', ['html:compile'], () => {
 
     gulp.src('src/index.html')
         .pipe($.htmlmin(options))
-        .pipe(gulp.dest('public/'));
+        .pipe(gulp.dest('build/'));
 });
 
 gulp.task('html', ['html:compile', 'html:minify']);
@@ -32,13 +32,18 @@ gulp.task('html', ['html:compile', 'html:minify']);
 gulp.task('css', () => {
     gulp.src('src/css/*.css')
         .pipe($.cleanCss())
-        .pipe(gulp.dest('public/css/'));
+        .pipe(gulp.dest('build/css/'));
 });
 
 gulp.task('js', () => {
     gulp.src('src/js/*.js')
         .pipe($.uglify())
-        .pipe(gulp.dest('public/js/'));
+        .pipe(gulp.dest('build/js/'));
+});
+
+gulp.task('assets', () => {
+    gulp.src(['src/assets/**/*'])
+        .pipe(gulp.dest('build/assets'));
 });
 
 gulp.task('watch', () => {
@@ -47,11 +52,6 @@ gulp.task('watch', () => {
         .on('change', () => {
             bs.reload();
         });
-});
-
-gulp.task('build', ['html', 'css', 'js'], () => {
-    gulp.src(['src/assets/**/*'])
-        .pipe(gulp.dest('public/assets'));
 });
 
 gulp.task('serve', () => {
@@ -64,3 +64,8 @@ gulp.task('serve', () => {
 });
 
 gulp.task('develop', ['html:compile', 'serve', 'watch']);
+
+gulp.task('build', ['html', 'css', 'js', 'assets'], () => {
+    gulp.src('src/bower_components/**/*')
+        .pipe(gulp.dest('build/bower_components/'));
+});
