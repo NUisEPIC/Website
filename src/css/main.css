@@ -72,6 +72,10 @@ section > .ui.grid {
     margin: 0 auto;
 }
 
+#team-description {
+    font-size: 12pt;
+}
+
 #epic-logo, #wildhacks-logo, #sprout-logo, #launch-logo, #hacknu-logo, #branding-slice, #bizdev-slice, #tech-slice {
     cursor:pointer;
 }
