@@ -7,7 +7,7 @@ var GHOST_CLIENT_SECRET = "617d69bbb120";
 /*
  *  Google Calendar API Secrets
  */
-var GAPI_CALENDAR_CLIENT_ID = "593405078961-0g630li5iqlrbqvgphfo0i2ivphfoqtb.apps.googleusercontent.com"
+var GAPI_CALENDAR_CLIENT_ID = "1070019008166-c5fkdtlbflitjm9aa52haqpg8areok7a.apps.googleusercontent.com"
 
 /*
  *  Mailgun API Secrets

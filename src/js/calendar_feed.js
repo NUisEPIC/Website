@@ -1,19 +1,19 @@
 // Your Client ID can be retrieved from your project in the Google
 // Developer Console, https://console.developers.google.com
-var CLIENT_ID = '593405078961-0g630li5iqlrbqvgphfo0i2ivphfoqtb.apps.googleusercontent.com';
+var CLIENT_ID = 'g8q8g4on4aalcs1ab9jpo2fbt4@group.calendar.google.com';
 var SCOPES = ["https://www.googleapis.com/auth/calendar.readonly"];
 
 /**
  * Check if current user has authorized this application.
  */
 function checkAuth() {
-  gapi.auth.authorize(
-    {
-      'client_id': CLIENT_ID,
-      'scope': SCOPES.join(' '),
-      'immediate': true
-    }, handleAuthResult
-  );
+    gapi.auth.authorize(
+        {
+            'client_id': CLIENT_ID,
+            'scope': SCOPES.join(' '),
+            'immediate': true
+        }, handleAuthResult
+    );
 }
 
 /**
@@ -22,16 +22,17 @@ function checkAuth() {
  * @param {Object} authResult Authorization result.
  */
 function handleAuthResult(authResult) {
-  var authorizeDiv = document.getElementById('authorize-div');
-  if (authResult && !authResult.error) {
-    // Hide auth UI, then load client library.
-    authorizeDiv.style.display = 'none';
-    loadCalendarApi();
-  } else {
-    // Show auth UI, allowing the user to initiate authorization by
-    // clicking authorize button.
-    authorizeDiv.style.display = 'inline';
-  }
+    var authorizeDiv = document.getElementById('authorize-div');
+    if (authResult && !authResult.error) {
+        // Hide auth UI, then load client library.
+        authorizeDiv.style.display = 'none';
+        loadCalendarApi();
+    }
+    else {
+        // Show auth UI, allowing the user to initiate authorization by
+        // clicking authorize button.
+        authorizeDiv.style.display = 'inline';
+    }
 }
 
 
@@ -40,9 +41,9 @@ function handleAuthResult(authResult) {
  * once client library is loaded.
  */
 function loadCalendarApi() {
-  $(function() {
-    gapi.client.load('calendar', 'v3', listUpcomingEvents);
-  });
+    $(function() {
+        gapi.client.load('calendar', 'v3', listUpcomingEvents);
+    });
 }
 
 /**
@@ -51,20 +52,20 @@ function loadCalendarApi() {
  * appropriate message is printed.
  */
 function listUpcomingEvents() {
-  gapi.client.setApiKey('AIzaSyAp_qFwhN7U2XtgUwRiNrMDhjOYicHBDmQ');
-  var request = gapi.client.calendar.events.list({
-    'calendarId': 'g8q8g4on4aalcs1ab9jpo2fbt4@group.calendar.google.com',
-    'timeMin': (new Date()).toISOString(),
-    'showDeleted': false,
-    'singleEvents': true,
-    'maxResults': 10,
-    'orderBy': 'startTime'
-  });
+    gapi.client.setApiKey('AIzaSyC28V45KWDjvgHA0fwMi-tOLHlH0r44jS8');
+    var request = gapi.client.calendar.events.list({
+        'calendarId': 'g8q8g4on4aalcs1ab9jpo2fbt4@group.calendar.google.com',
+        'timeMin': (new Date()).toISOString(),
+        'showDeleted': false,
+        'singleEvents': true,
+        'maxResults': 10,
+        'orderBy': 'startTime'
+    });
 
-  request.execute(function(resp) {
-    var events = resp.items;
-    displayResults(events);
-  });
+    request.execute(function(resp) {
+        var events = resp.items;
+        displayResults(events);
+    });
 }
 
 /**
@@ -74,47 +75,36 @@ function listUpcomingEvents() {
  * @param {string} message Text to be placed in pre element.
  */
 function displayResults(events) {
-  var feed = $('#event-feed')[0];
+    var feed = $('#event-feed')[0];
 
-  if (events.length > 0) {
-    for (i = 0; i < events.length; i++) {
-      var event = events[i];
-      var when = moment(new Date(event.start.dateTime || event.start.date));
-      if (!when) {
-        when = moment(event.start.date);
-      }
+    if (events.length > 0) {
+        for (i = 0; i < events.length; i++) {
+            var event = events[i];
+            var when = moment(new Date(event.start.dateTime || event.start.date));
+            if (!when) {
+                when = moment(event.start.date);
+            }
 
-      var item = feed.appendChild(document.createElement('div'));
-      $(item).addClass('item');
-
-      var calendar = item.appendChild(document.createElement('div'));
-      $(calendar).addClass('ui image calendar');
-      var month = calendar.appendChild(document.createElement('div'));
-      $(month).addClass('month');
-      var monthText = month.appendChild(document.createElement('h2'));
-      monthText.appendChild(document.createTextNode(when.format('MMM')));
-      var date = calendar.appendChild(document.createElement('div'));
-      $(date).addClass('date');
-      var dateText = date.appendChild(document.createElement('h2'));
-      dateText.appendChild(document.createTextNode(when.format('Do')));
-
-      var description = item.appendChild(document.createElement('div'));
-      $(description).addClass('middle aligned content description');
-
-      var eventName = description.appendChild(document.createElement('a'));
-      eventName.appendChild(document.createTextNode(event.summary));
-      $(eventName).addClass('header');
-
-      var eventTime = description.appendChild(document.createElement('div'));
-      eventTime.appendChild(document.createTextNode(when.format('llll')));
-      $(eventTime).addClass('meta');
-
-      var descriptionDiv = description.appendChild(document.createElement('div'));
-      var descriptionText = descriptionDiv.appendChild(document.createElement('p'));
-      descriptionText.appendChild(document.createTextNode(event.description));
-
+            var $div = '<div>';
+            var $h2 = '<h2>';
+            var $a = '<a>';
+            var $p = '<p>';
+            var item = $($div, {class: 'item'})
+            var calendar = $($div, {class: 'ui image calendar'})
+                .append(($($div, {class: 'month'}))
+                    .append($($h2, {text: when.format('MMM')})))
+                .append(($($div, {class: 'date'}))
+                    .append($($h2, {text: when.format('Do')})))
+            var description = $($div, {class: 'middle aligned description content'})
+                .append($($a, {class: 'header', text: event.summary}))
+                .append($($div, {class: 'meta', text: when.format('llll')}))
+                .append($($div)
+                    .append($($p, {text: event.description})))
+            item.append(calendar)
+            item.append(description)
+            $(feed).append(item)
+        }
+    } else {
+        feed.appendChild(document.createTextNode('No upcoming events'));
     }
-  } else {
-    feed.appendChild(document.createTextNode('No upcoming events'));
-  }
 }

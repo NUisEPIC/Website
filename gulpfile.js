@@ -47,7 +47,7 @@ gulp.task('assets', () => {
 });
 
 gulp.task('watch', () => {
-    gulp.watch(['src/views/**/*.html'], ['html:compile']);
+    gulp.watch(['src/layout.html', 'src/views/**/*.html'], ['html:compile']);
     gulp.watch(['src/index.html'])
         .on('change', () => {
             bs.reload();

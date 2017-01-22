@@ -3,35 +3,17 @@
     src: url("../assets/fonts/museosans-500.otf");
 }
 
-:not(i) {
+h1, h2, h3, h4, h5, h6, p, pre, span, a, input, button {
     font-family: MuseoSans !important;
-}
-
-body {
-    margin-top: 40px;
 }
 
 #general-member-button:hover {
     background-color: #fc0d38;
     color: white;
 }
-.ui.primary.button {
-    background-color: red;
-}
 
-section.ui.grid {
-    margin: 0;
-    width: 100%;
-    min-height: 600px;
-    padding-top: 60px;
-}
-.ui.button.custom-red{
-    background-color: #eb2e3b;
-    color: white;
-}
-.ui.button.custom-red:hover{
-    background-color: #fc0d38;
-    color: white;
+section > .ui.grid {
+    padding-top: 30px;
 }
 
 #menu > .item {
@@ -41,15 +23,6 @@ section.ui.grid {
 
 #logo {
   max-height: 200px;
-  transition: transform ease 0.5s, top ease 0.5s;
-}
-
-#logo.shrink {
-  transform: scale(.5, 0.5);
-}
-
-#logo + section {
-  transition: padding-top ease 0.5s;
 }
 
 .feed {
@@ -93,12 +66,6 @@ section.ui.grid {
   padding: 0;
 }
 
-#mission-statement{
-  width: 100%;
-  text-align: center;
-  margin-bottom: 35px;
-}
-
 #team-diagram {
     height: 600px;
     width: 600px;
@@ -109,28 +76,18 @@ section.ui.grid {
     cursor:pointer;
 }
 
-#about {
-    position: relative;
-}
-
-#about .pictures {
-    position: absolute;
-    display: block;
-    top: 0;
-    width: 225px;
-}
-#about .video{
-    padding-left: 30px;
-    padding-right: 30px;
-}
-#about-text{
-    text-align: left;
-    width: 400px;
-}
-@media screen and (max-width: 1000px) {
-    #about .pictures img {
-        display: none;
-    }
+#about #who-and-what {
+    height: 70vh;
+    font-size: 14pt;
+    color:white;
+    background-image: linear-gradient(
+            rgba(0, 0, 0, 0.5),
+            rgba(0, 0, 0, 0.5)
+        ),
+        url('../assets/images/whoweare.jpg');
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size:100% auto;
 }
 
 #footer {
@@ -138,40 +95,17 @@ section.ui.grid {
     border-radius: 0px;
 }
 
-#footer .contact {
-    text-align: center;
-}
-section:nth-of-type(even) {
-  position: relative;
-  background: linear-gradient(to top right, #ed2d39, rgb(219, 40, 40));
-  color: #fff;
-  margin: 200px 0;
-}
-section:nth-of-type(even)::before {
-  position: absolute;
-  display: block;
-  background: inherit;
-  width: 110%;
-  height: 130%;
-  left: -5%;
-  top: -15%;
-  transform: rotateZ(-3deg);
-  content: '';
-}
-
 .logo-image{
     height: 100px;
     width: 100px;
 }
 
-#general-member-input{
+#general-member-form{
     margin: 0 auto;
     padding-bottom: 40px;
 }
-#general-member-button{
+#general-member-form button {
     background-color: #eb2e3b;
-    border: 0px;
-    border-radius: 8px;
     color: white;
 }
 .custom-colors{
@@ -184,11 +118,6 @@ section:nth-of-type(even)::before {
 #team-info {
     margin: 150px 0;
     float: left;
-}
-
-#team-page{
-    padding-top: 0px;
-    width: 100%;
 }
 
 iframe{
@@ -234,24 +163,3 @@ iframe{
         margin: 0 auto;
     }
 }
-
-@media screen and (max-width: 1150px) {
-    #about .video{
-        width:100%;
-    }
-    #about-text{
-        display: block;
-        width: 100%;
-    }
-    iframe {
-        width:400px;
-        height:315px;
-    }
-
-    #success, #error {
-        position: fixed;
-        z-index: 99;
-        left: 50%;
-        top: 50%;
-        transform: translate(-50%,-50%);
-    }
